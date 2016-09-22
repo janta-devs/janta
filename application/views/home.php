@@ -12,7 +12,6 @@
 		<h1 style="font-style: cursive;">Janta</h1>
 	</header>
 	<div id="start" class="col-md-12 pull-right"></div>
-  <button class = "btn btn-primary">Click Me</button>
 </div>
 
 </body>
@@ -24,14 +23,4 @@
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-with-addons.min.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type = "text/babel" src = "<?php print base_url();?>assets/js/registration.js"></script>
-  
-  <script>
-	(function($, document, window, undefined){
-      
-      var btn = $('.btn');
-      btn.on('click', function( event ){
-       	alert('Clicked');
-      });
-    })(jQuery, document, window);
-  </script>
 </html>
