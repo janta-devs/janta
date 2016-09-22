@@ -143,6 +143,9 @@ var MyForm  =  React.createClass({
 					window.alert("The passwords did not match, please try again");
 				}
 			}
+			else{
+				window.alert("The form has to be filled");
+			}
 	},
 	verifier: function( e )
 	{
