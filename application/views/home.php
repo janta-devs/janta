@@ -11,7 +11,7 @@
 	<header class="jumbotron">
 		<h1 style="font-style: cursive;">Janta</h1>
 	</header>
-	<div id="start" class="col-md-12 pull-right"></div>
+	<div id="start" class="pull-right"></div>
 </div>
 
 </body>
