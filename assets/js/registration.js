@@ -5,22 +5,74 @@ var choiceStyle = {
 	paddingTop: 100,
 };
 
-var Refresh = React.createClass({
-  _clickHandle: function( event ){
-    event.preventDefault();
-    event.stopPropagation();
-    
-    var node = event.target, $node = $(node);
-    $node.on('click', function( e ){
-      window.location.href = "";
-    });
-  },
-  render: function(){
-    return(
-		<button className = "btn btn-primary"><span className = "badge">Refresh</span></button>
-  	);
- }
+var InitialPage = React.createClass({
+	getInitialState: function()
+	{
+		return { login_details: {}, login_data: {}}
+	},
+	_handleSubmit: function( e )
+	{
+		e.preventDefault();
+		e.stopPropagation();
+		if(this.state.login_data.hasOwnProperty("email") 
+			&& this.state.login_data.hasOwnProperty("username") 
+			&& this.state.login_data.hasOwnProperty("password") 
+			&& this.state.login_data.hasOwnProperty("re_password"))
+			{
+				if(this.state.login_data.password === this.state.login_data.re_password)
+				{
+					ReactDOM.render(<StartPage />, document.getElementById('start'));
+				}
+				else
+				{
+					window.alert( this.state.login_data );
+					console.log( this.state.login_data );
+				}
+			}
+			else{
+				window.alert("The form has to be filled");
+			}
+	},
+	verifier: function( e )
+	{
+		e.preventDefault();
+		e.stopPropagation();
+		var node = e.target, HTMLTag = $(node);
+		if (HTMLTag.attr('type') == 'text' && typeof(HTMLTag.val()) == 'string' ){ 
+			getData[HTMLTag.attr('name')] = HTMLTag.val();
+			this.setState({login_data: getData});
+		}
+		if(HTMLTag.attr('type') == 'email' && typeof(HTMLTag.val()) == 'string' ){
+			getData[HTMLTag.attr('name')] = HTMLTag.val();
+			this.setState({login_data: getData});
+		}
+		if(HTMLTag.attr('type') == 'password' && typeof(HTMLTag.val()) == 'string' ){
+			getData[HTMLTag.attr('name')] = HTMLTag.val();
+			this.setState({login_data: getData});
+		}
+	},
+	render: function() 
+	{
+		return (
+			<div className = "panel panel-default">
+			<div className = "panel-heading">
+				<h4>Enter Login Information</h4>
+			</div>
+			<div className = "panel-body">	
+				<form className = "form-inline"> 
+					Username:<br /><input type = "text" name = "username" placeholder = "username" className = "form-control" onBlur = {this.verifier}/><br/>
+					Email:<br /><input type = "email" name = "email" placeholder = "email" className = "form-control" onBlur = {this.verifier}/><br/>
+					Password:<br /><input type = "password" name = "password" placeholder = "password" className = "form-control" onBlur = {this.verifier}/><br/>
+					Reenter password:<br /><input type = "password" name = "re_password" placeholder = "password" className = "form-control" onBlur = {this.verifier}/><br/>
+					<br /><button type="button" className="btn btn-default" onClick = {this._handleSubmit}>Sign Up</button>
+				</form>
+			</div>
+
+			</div>
+		);
+	}
 });
+
 var StartPage = React.createClass({
 	getInitialState: function(){
 		return{ val: false}
@@ -197,5 +249,5 @@ var MyForm  =  React.createClass({
 	}
 });
 
-ReactDOM.render(<StartPage />, document.getElementById('start'));
+ReactDOM.render(<InitialPage />, document.getElementById('start'));
 
