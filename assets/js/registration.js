@@ -169,14 +169,6 @@ var MyForm  =  React.createClass({
 			this.setState({dt: getData});
 		}
 	},
-	componentDidMount: function(){
-		this.ImportData();
-	},
-	ImportData: function(){
-		$.getJSON('./js/data.json',function(LoadedInfo) {
-				console.log( LoadedInfo );
-		});
-	},
 	render: function() 
 	{
 		return (
