@@ -6,8 +6,8 @@ class Home extends CI_Controller{
 
 	public function index()
 	{
-		$this->load->model('crud');
-		$res = $this->crud->get();
+		$this->load->model('employee');
+		$res = $this->employee->get();
 		print( json_encode($res) );				// printing out the JSON formatted contents from the db
 		$this->load->view('home');
 	}

@@ -1,10 +1,10 @@
 <?php
 
-class Crud extends My_Model{
+class Employee extends My_Model{
 	const DB_TABLE = "employee";
 	const DB_TABLE_PK = "employee_id";
 
-	
+
 	// public function __constructor()
 	// {
 	// 	parent::__constructor();		//loading the core CI Model constructor
