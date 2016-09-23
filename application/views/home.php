@@ -39,7 +39,7 @@
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Sign Up now &raquo;</a></p>
       </div>
     </div>
-	<div id="start" class="col-md-12 pull-right"></div>
+	<!-- <div id="start" class="col-md-12 pull-right"></div> -->
 </div>
 
 </body>
