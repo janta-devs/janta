@@ -21,7 +21,7 @@ var InitialPage = React.createClass({
 			{
 				if(this.state.login_data.password === this.state.login_data.re_password)
 				{
-					ReactDOM.render(<StepTwo />, document.getElementById('start'));
+					ReactDOM.render(<MyForm />, document.getElementById('start'));
 				}
 				else
 				{
@@ -90,7 +90,7 @@ var StartPage = React.createClass({
 		e.stopPropagation();
 		var TargetButton = e.target;
 		if( $(TargetButton).attr('name') === 'job_seeker' ){
-			ReactDOM.render(<MyForm />, document.getElementById('start'));
+			ReactDOM.render(<InitialPage />, document.getElementById('start'));
 		}
 	},
 	render: function() {
@@ -119,7 +119,7 @@ var StepTwo  =  React.createClass({
 		e.stopPropagation();
 		var TargetButton = e.target;
 		if( $(TargetButton).attr('name') === 'back' ){
-			ReactDOM.render(<InitialPage />, document.getElementById('start'));
+			ReactDOM.render(<StepTwo />, document.getElementById('start'));
 		}
 	},
 	_handleSubmit: function( e )
@@ -178,7 +178,7 @@ var MyForm  =  React.createClass({
 		e.stopPropagation();
 		var TargetButton = e.target;
 		if( $(TargetButton).attr('name') === 'back' ){
-			ReactDOM.render(<StartPage />, document.getElementById('start'));
+			ReactDOM.render(<StepTwo />, document.getElementById('start'));
 		}
 	},
 	_handleSubmit: function( e )
