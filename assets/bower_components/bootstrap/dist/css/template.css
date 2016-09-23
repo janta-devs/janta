@@ -1,0 +1,22 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 23, 2016, 11:16:03 AM
+    Author     : Dan
+*/
+.logo-home{
+    float: left;
+    height: 50px;
+    width: 250px;
+    background: url("../images/logo2.png") no-repeat;
+    padding-top: 5px;
+    margin-top: 3px;
+    
+}
+.container.jumbotron.h1.p{
+     text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	
+}
