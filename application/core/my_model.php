@@ -8,11 +8,11 @@ class My_Model extends CI_Model{
 		$this->{$this::DB_TABLE_PK} = $this->db->insert_id();
 	}
 	private function update(){
-		$this->db->update($this::DB_TABLE, $this, $this->DB_TABLE_PK);
+		$this->db->set($this::DB_TABLE, $this, $this->DB_TABLE_PK);
 
 	}
 	public function populate( $row ){
-		foreach ($raw as $key => $value) {
+		foreach ($row as $key => $value) {
 			$this->$key = $value;
 		}
 	}
@@ -32,23 +32,28 @@ class My_Model extends CI_Model{
 			$this->insert();
 		}
 	}
-
 	// Getting an array with an optional limit and offset
 
-	public function get($limit = 0, offset = 0){
-		if( $limit ){
+	public function get($limit = 0, $offset = 0)
+	{
+		if( isset($limit) )
+		{
 			$query = $this->db->get($this::DB_TABLE, $limit, $offset);
 		}
-	}else{
-		$query = $this->db->get($this::DB_TABLE);
+		else
+		{
+			$query = $this->db->get($this::DB_TABLE);
+		}
+		$return_val = [];	
+		$class = get_class( $this );
+		foreach ($query->result() as $row ) 
+		{
+			$model = new $class;
+			$model->populate($row);
+			$return_val[$row->{$this::DB_TABLE_PK}] = $model;
+		}
+		return $return_val;
 	}
-	$return_val = [];	
-	$class = get_class( $this );
-	foreach ($query->result() as $row ) {
-		$model = new $class;
-		$model->populate($row);
-		$return_val[$row->{$this::DB_TABLE_PK}] = $model;
-	}
-	return $return_val;
 }
+
 ?>

@@ -21,7 +21,7 @@ var InitialPage = React.createClass({
 			{
 				if(this.state.login_data.password === this.state.login_data.re_password)
 				{
-					ReactDOM.render(<StartPage />, document.getElementById('start'));
+					ReactDOM.render(<StepTwo />, document.getElementById('start'));
 				}
 				else
 				{
@@ -60,11 +60,19 @@ var InitialPage = React.createClass({
 			</div>
 			<div className = "panel-body">	
 				<form className = "form-inline"> 
-					Username:<br /><input type = "text" name = "username" placeholder = "username" className = "form-control" onBlur = {this.verifier}/><br/>
-					Email:<br /><input type = "email" name = "email" placeholder = "email" className = "form-control" onBlur = {this.verifier}/><br/>
-					Password:<br /><input type = "password" name = "password" placeholder = "password" className = "form-control" onBlur = {this.verifier}/><br/>
-					Reenter password:<br /><input type = "password" name = "re_password" placeholder = "password" className = "form-control" onBlur = {this.verifier}/><br/>
-					<br /><button type="button" className="btn btn-default" onClick = {this._handleSubmit}>Sign Up</button>
+					<div className = "control-group">
+						Username:<br /><input type = "text" name = "username" placeholder = "username" className = "form-control" onBlur = {this.verifier}/><br/>
+						Email:<br />
+						<div className="controls">
+						<div className = "input-prepend">
+						<span className = "add-on"><i className = "icon-envelope"></i></span>
+						<input type = "email" id = "inputIcon" name = "email" placeholder = "email" className = "form-control" onBlur = {this.verifier}/><br/>
+						</div>
+						</div>
+						Password:<br /><input type = "password" name = "password" placeholder = "password" className = "form-control" onBlur = {this.verifier}/><br/>
+						Reenter password:<br /><input type = "password" name = "re_password" placeholder = "password" className = "form-control" onBlur = {this.verifier}/><br/>
+						<br /><button type="button" className="btn btn-default" onClick = {this._handleSubmit}>Sign Up</button>
+					</div>
 				</form>
 			</div>
 
@@ -111,7 +119,7 @@ var StepTwo  =  React.createClass({
 		e.stopPropagation();
 		var TargetButton = e.target;
 		if( $(TargetButton).attr('name') === 'back' ){
-			ReactDOM.render(<MyForm />, document.getElementById('start'));
+			ReactDOM.render(<InitialPage />, document.getElementById('start'));
 		}
 	},
 	_handleSubmit: function( e )
@@ -143,10 +151,10 @@ var StepTwo  =  React.createClass({
 				<h4>Step Two</h4>
 			</div>
 				<div className = "panel-body">
-					<form className = "form">
-						Country: <br/><input type = "text" name = "country" onBlur = {this.verifier} required={true}/><br />
-						City/Town: <br/><input type = "text" name = "city" onBlur = {this.verifier} required={true}/><br />
-						Locality: <br/><input type = "text" name = "locality" onBlur = {this.verifier} required={true}/><br /><br/>
+					<form className = "form-inline">
+						Country: <br/><input type = "text" name = "country" onBlur = {this.verifier} required={true} className = "form-control"/><br />
+						City/Town: <br/><input type = "text" name = "city" onBlur = {this.verifier} required={true} className = "form-control"/><br />
+						Locality: <br/><input type = "text" name = "locality" onBlur = {this.verifier} required={true} className = "form-control"/><br /><br/>
 						<button className = "btn btn-default" onClick = {this._handleSubmit}><span className="badge">Submit</span></button>
 					</form>
 				</div>
@@ -230,14 +238,14 @@ var MyForm  =  React.createClass({
 			</div>
 				<div className = "panel-body">
 					<form className = "form">
-						First name: <br/><input type = "text" name = "fname" onBlur = {this.verifier} required={true}/><br />
-						Last name: <br/><input type = "text" name = "lname" onBlur = {this.verifier} required={true}/><br />
-						Surname name: <br/><input type = "text" name = "surname" onBlur = {this.verifier} required={true}/><br />
-						Email: <br/><input type = "email" name = "email" onBlur = {this.verifier} required={true}/><br />
-						Username: <br/><input type = "text" name = "username" onBlur = {this.verifier} required={true}/><br />
-						Password: <br/><input type = "password" name = "password" onBlur = {this.verifier} required={true}/><br />
-						Re-enter Password: <br/><input type = "password" name = "re_password" onBlur = {this.verifier} required={true}/><br />
-						Phone number: <br/><input type = "number" name = "phone_number" onBlur = {this.verifier} required={true}/><br /><br />
+						First name: <br/><input type = "text" name = "fname" onBlur = {this.verifier} required={true} className = "form-control"/><br />
+						Last name: <br/><input type = "text" name = "lname" onBlur = {this.verifier} required={true} className = "form-control"/><br />
+						Surname name: <br/><input type = "text" name = "surname" onBlur = {this.verifier} required={true} className = "form-control"/><br />
+						Email: <br/><input type = "email" name = "email" onBlur = {this.verifier} required={true} className = "form-control"/><br />
+						Username: <br/><input type = "text" name = "username" onBlur = {this.verifier} required={true} className = "form-control"/><br />
+						Password: <br/><input type = "password" name = "password" onBlur = {this.verifier} required={true} className = "form-control"/><br />
+						Re-enter Password: <br/><input type = "password" name = "re_password" onBlur = {this.verifier} required={true} className = "form-control"/><br />
+						Phone number: <br/><input type = "number" name = "phone_number" onBlur = {this.verifier} required={true} className = "form-control"/><br /><br />
 						<button className = "btn btn-default" onClick = {this._handleSubmit}><span className="badge">Submit</span></button>
 					</form>
 				</div>
@@ -249,5 +257,5 @@ var MyForm  =  React.createClass({
 	}
 });
 
-ReactDOM.render(<InitialPage />, document.getElementById('start'));
+ReactDOM.render(<StartPage />, document.getElementById('start'));
 
