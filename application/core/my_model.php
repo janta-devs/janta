@@ -1,14 +1,23 @@
 <?php
 class My_Model extends CI_Model{
 	const DB_TABLE = "abstract";
-	const DB_TABLE_PK = "abastract";
+	public $DB_TABLE_PK = 0;
 
-	private function insert(){
-		$this->db->insert($this::DB_TABLE, $this);
-		$this->{$this::DB_TABLE_PK} = $this->db->insert_id();
+	public function insert( $data ){
+		if( $this->check($this::DB_TABLE, $data ) == FALSE )
+		{
+			$this->db->insert($this::DB_TABLE, $data);
+			$this->{$this->DB_TABLE_PK} = $this->db->insert_id();
+			print json_encode(['status'=>'registered']);
+		}
+		else
+		{
+			print json_encode(['exists'=>TRUE, 'data'=>$data]);
+		}
 	}
-	private function update(){
-		$this->db->set($this::DB_TABLE, $this, $this->DB_TABLE_PK);
+	public function update($data, $table_pk){
+		$this->DB_TABLE_PK = $table_pk;
+		$this->db->set($this::DB_TABLE, $data, $this->DB_TABLE_PK);
 
 	}
 	public function populate( $row ){
@@ -17,15 +26,15 @@ class My_Model extends CI_Model{
 		}
 	}
 	public function load( $id ){
-		$query = $this->db->get_where($this::DB_TABLE, [$this::DB_TABLE_PK => $id]);
+		$query = $this->db->get_where($this::DB_TABLE, [$DB_TABLE_PK => $id]);
 		$this->populate($query->row());
 	}
 	public function delete(){
-		$this->db->delete($this::DB_TABLE, [$this::DB_TABLE_PK => $this->{$this::DB_TABLE_PK}]);
-		unset( $this->{$this::DB_TABLE_PK});
+		$this->db->delete($this::DB_TABLE, [$DB_TABLE_PK => $this->{$this->DB_TABLE_PK}]);
+		unset( $this->{$this->DB_TABLE_PK});
 	}
 	public function save(){
-		if(isset($this->{$this::DB_TABLE_PK})){
+		if(isset($this->{$this->DB_TABLE_PK})){
 			$this->update();
 		}
 		else{
@@ -50,9 +59,15 @@ class My_Model extends CI_Model{
 		{
 			$model = new $class;
 			$model->populate($row);
-			$return_val[$row->{$this::DB_TABLE_PK}] = $model;
+			$return_val[$row->{$this->DB_TABLE_PK}] = $model;
 		}
 		return $return_val;
+	}
+	public function check( $table, $data )
+	{
+		$this->db->get_where( $table , $data);
+		$num_of_affected_rows = $this->db->affected_rows();
+		($num_of_affected_rows === 1) ? TRUE : FALSE;
 	}
 }
 

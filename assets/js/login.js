@@ -2,12 +2,31 @@
 
 var signup_button = $('#register');
 var form = $('#registration');
+var modal = $('.modal-body');
 
+modal.on('click', function(event){
+	event.preventDefault();
+	event.stopPropagation();
+});
 signup_button.on('click', (function(event) {
 	event.preventDefault();
 	event.stopPropagation();
-
-	console.log( event );
+	$data = form.serialize();			//capturing form data
+	$.ajax({
+		url: 'http://localhost/janta/index.php/home/getregistrationData',
+		type: 'POST',
+		dataType: 'json',
+		data: $data,
+	})
+	.done(function( res ) {
+		console.log(res);
+	})
+	.fail(function( res ) {
+		console.log( res );
+	})
+	.always(function() {
+		console.log("complete");
+	});
 }));
 
 })(jQuery, document, undefined);

@@ -6,10 +6,18 @@ class Home extends CI_Controller{
 
 	public function index()
 	{
-		$this->load->model('employee');
-		$res = $this->employee->get();
-		// print( json_encode($res) );				// printing out the JSON formatted contents from the db
+		
 		$this->load->view('home');
+	}
+
+	public function getregistrationData()
+	{
+		$this->load->model('user_login');
+		$data = $this->input->post();
+		if(isset( $data ) && is_array( $data ) && !empty( $data )){
+			$user_login = new user_login();
+			$user_login->insert( $data );
+		 }
 	}
 }
 
