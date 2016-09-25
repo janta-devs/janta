@@ -78,7 +78,11 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => 'dexter123',
+<<<<<<< HEAD
 	'database' => '2016olycraftdb',
+=======
+	'database' => '2016olycraftdb1',
+>>>>>>> test
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
