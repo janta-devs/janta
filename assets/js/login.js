@@ -28,9 +28,9 @@ signup_button.on('click', (function(event) {
 	.done(function( res ) {
 		console.log( res );
 		if( res['status'] == 'registered'){
-			alert('Successfully registered');
+			alert_div.show('slow').removeClass('alert-danger').addClass('alert-success').html('Successfully registered');
 		}else if( res['exists'] == true ){
-			alert_div.show('slow').addClass('alert-danger').html('User is already register');
+			alert_div.show('slow').removeClass('alert-success').addClass('alert-danger').html('User is already register');
 		}
 	})
 	.fail(function() {

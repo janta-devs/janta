@@ -46,7 +46,10 @@
  	<div class="modal-dialog">
  		<div class="modal-content">
  			
- 			<div class="modal-header"><h4>Register</h4></div>
+ 			<div class="modal-header">
+      <h4>Register</h4>
+      </div>
+
  			<div class="modal-body">
       <div class="alert alert-success" style="display: none;">Please fill all the fields</div>
  				<form class="form-inline" id="registration">
@@ -56,6 +59,7 @@
  			</div>
  			<div class="modal-footer">
  				<button class="btn btn-primary pull-right" id="register">Submit</button>
+        <button class="btn btn-warning pull-left" data-dismiss = "modal">Close</button>
  				</form>
  			</div>
 
@@ -63,7 +67,10 @@
  	</div>
  </div>
  <!--End of Modal-->
-	<div id="start" class="col-md-12 pull-right"></div> 
+
+
+
+	<!-- <div id="start" class="col-md-12 pull-right"></div>  -->
 
 </div>
 
