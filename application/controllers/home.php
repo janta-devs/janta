@@ -3,22 +3,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 class Home extends CI_Controller{
-
 	public function index()
 	{
 		
 		$this->load->view('home');
 	}
 
-	public function getregistrationData()
+	public function register()
 	{
 		$this->load->model('user_login');
 		$data = $this->input->post();
-		if(isset( $data ) && is_array( $data ) && !empty( $data )){
+		if(isset( $data ) && is_array( $data ) && !empty( $data ))
+		{
 			$user_login = new user_login();
 			$user_login->insert( $data );
 		 }
 	}
+	public function update(){
+		$this->load->model('user_login');
+		$user_login = new user_login();
+		// example of how the update function ought to be used
+		/*
+		*@parameters two arrays first one with old user_information
+		*@parameters second array with new user_information to be updated
+		*	Example
+		*/
+		// $old_data = ['username'=>'antony', 'password'=>'pass','re_password'=>'pass'];
+		// $new_data = ['username'=>'Jadz', 'password'=>'ngayo','re_password'=>'ngayo'];	
+		// $user_login->update( $old_data, $new_data );
+	}
+
+	public function delete(){
+		$this->load->model('user_login');
+		$user_login = new user_login();
+		$data = ['username'=>'Jadz', 'password'=>'ngayo','re_password'=>'ngayo'];
+		$user_login->delete($data);
+	}
+
 }
 
 ?>

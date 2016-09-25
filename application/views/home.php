@@ -35,7 +35,7 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Looking for Work?</h1>
-        <p>Join the #1 global workplace to get access to millions of gigs and job opportunities from thousands of employers near you.</p>
+        <p class='jumbotron-text'>Join the #1 global workplace to get access to millions of gigs and job opportunities from thousands of employers near you.</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button" id = "signup" data-toggle = "modal" data-target = "#register">Sign Up now &raquo;</a></p>s
       </div>
     </div>

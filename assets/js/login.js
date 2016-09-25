@@ -13,19 +13,16 @@ signup_button.on('click', (function(event) {
 	event.stopPropagation();
 	$data = form.serialize();			//capturing form data
 	$.ajax({
-		url: 'http://localhost/janta/index.php/home/getregistrationData',
+		url: 'http://localhost/janta/index.php/home/register',
 		type: 'POST',
 		dataType: 'json',
 		data: $data,
 	})
 	.done(function( res ) {
-		console.log(res);
-	})
-	.fail(function( res ) {
 		console.log( res );
-	})
-	.always(function() {
-		console.log("complete");
+		if( res['status'] == 'registered'){
+			alert('Successfully registered');
+		}
 	});
 }));
 

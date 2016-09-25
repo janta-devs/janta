@@ -1,13 +1,16 @@
 <?php
-class My_Model extends CI_Model{
-	const DB_TABLE = "abstract";
-	public $DB_TABLE_PK = 0;
+class My_Model extends CI_Model
+{
+	const DB_TABLE = "abstract";		// the name of the table being worked on			
+	const DB_TABLE_PK = "abstract";		// the value of the primary key e.g. 1, 100 depending on user's number in DB
+	const DB_PK_NAME = "abstract";		// this is the field name of the primary key (unique to each table)
 
-	public function insert( $data ){
+	public function insert( $data )
+	{
 		if( $this->check($this::DB_TABLE, $data ) == FALSE )
 		{
 			$this->db->insert($this::DB_TABLE, $data);
-			$this->{$this->DB_TABLE_PK} = $this->db->insert_id();
+			$this->{$this::DB_TABLE_PK} = $this->db->insert_id();	// setting new value of primary key for user just registered
 			print json_encode(['status'=>'registered']);
 		}
 		else
@@ -15,26 +18,41 @@ class My_Model extends CI_Model{
 			print json_encode(['exists'=>TRUE, 'data'=>$data]);
 		}
 	}
-	public function update($data, $table_pk){
-		$this->DB_TABLE_PK = $table_pk;
-		$this->db->set($this::DB_TABLE, $data, $this->DB_TABLE_PK);
-
+	public function update($initial_data, $new_data)
+	{
+		if( $this->check( $this::DB_TABLE, $initial_data ) == TRUE )
+		{
+			$res = $this->db->get_where( $this::DB_TABLE, $initial_data);
+			$this->{$this::DB_TABLE_PK} = $res->row()->login_id;
+			($this->db->update($this::DB_TABLE, $new_data, [$this::DB_PK_NAME => $this::DB_TABLE_PK]) == True )?
+			print json_encode("updated") : print json_encode('update failed');
+		}
 	}
 	public function populate( $row ){
-		foreach ($row as $key => $value) {
+		foreach ($row as $key => $value)
+		{
 			$this->$key = $value;
 		}
 	}
-	public function load( $id ){
-		$query = $this->db->get_where($this::DB_TABLE, [$DB_TABLE_PK => $id]);
+	public function load( $id )
+	{
+		$query = $this->db->get_where($this::DB_TABLE, [$this::DB_PK_NAME => $id]);
 		$this->populate($query->row());
 	}
-	public function delete(){
-		$this->db->delete($this::DB_TABLE, [$DB_TABLE_PK => $this->{$this->DB_TABLE_PK}]);
-		unset( $this->{$this->DB_TABLE_PK});
+	/*
+	*@Function Delete
+	*@Param Data to be deleted
+	*@This Model will have the user's Primary key at all times from the session table
+	*/
+	public function delete( $data )
+	{
+		$this->db->delete($this::DB_TABLE, [$this::DB_PK_NAME => $this::DB_TABLE_PK]);
+		unset( $this->{$this::DB_TABLE_PK});
 	}
-	public function save(){
-		if(isset($this->{$this->DB_TABLE_PK})){
+	public function save()
+	{
+		if(isset($this->{$this::DB_TABLE_PK}))
+		{
 			$this->update();
 		}
 		else{
@@ -59,7 +77,7 @@ class My_Model extends CI_Model{
 		{
 			$model = new $class;
 			$model->populate($row);
-			$return_val[$row->{$this->DB_TABLE_PK}] = $model;
+			$return_val[$row->{$this::DB_TABLE_PK}] = $model;
 		}
 		return $return_val;
 	}
@@ -67,7 +85,7 @@ class My_Model extends CI_Model{
 	{
 		$this->db->get_where( $table , $data);
 		$num_of_affected_rows = $this->db->affected_rows();
-		($num_of_affected_rows === 1) ? TRUE : FALSE;
+		return ($num_of_affected_rows === 1) ? TRUE : FALSE;
 	}
 }
 
