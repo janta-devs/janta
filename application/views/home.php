@@ -39,11 +39,10 @@
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Sign Up now &raquo;</a></p>
       </div>
     </div>
-<<<<<<< HEAD
 	<!-- <div id="start" class="col-md-12 pull-right"></div> -->
-=======
-	<!--<div id="start" class="col-md-12 pull-right"></div> -->
->>>>>>> 1015509db5d9405fd9e443ae768fe73e9a8d9477
+
+	<div id="start" class="col-md-12 pull-right"></div> 
+
 </div>
 
 </body>
