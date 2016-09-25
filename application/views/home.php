@@ -51,10 +51,6 @@
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-dom.min.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-with-addons.min.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<<<<<<< HEAD
 <script type = "text/babel" src = "<?php print base_url();?>assets/js/registration.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/js/login.js"></script>
-=======
-<script type = "text/babel" src = "/janta/assets/js/registration.js"></script>
->>>>>>> test
 </html>

@@ -5,7 +5,7 @@ signup_button.on('click', function( event ){
 	event.preventDefault();
 	event.stopPropagation();
 
-	console.log('clicked');
+	alert('Clicked');
 });
 
 })(jQuery, document, undefined);

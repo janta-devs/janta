@@ -8,7 +8,7 @@ class Home extends CI_Controller{
 	{
 		$this->load->model('employee');
 		$res = $this->employee->get();
-		print( json_encode($res) );				// printing out the JSON formatted contents from the db
+		// print( json_encode($res) );				// printing out the JSON formatted contents from the db
 		$this->load->view('home');
 	}
 }
