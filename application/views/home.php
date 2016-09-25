@@ -36,9 +36,34 @@
       <div class="container">
         <h1>Looking for Work?</h1>
         <p>Join the #1 global workplace to get access to millions of gigs and job opportunities from thousands of employers near you.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button" id = "signup">Sign Up now &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button" id = "signup" data-toggle = "modal" data-target = "#register">Sign Up now &raquo;</a></p>s
       </div>
     </div>
+
+ <!--Creating the modal for registration-->
+ <div class="modal" id = "register">
+ 	<div class="modal-dialog">
+ 		<div class="modal-content">
+ 			
+ 			<div class="modal-header"><h4>Register</h4></div>
+ 			<div class="modal-body">
+ 				<form class="form-inline" id="registration">
+ 					First Name<br /><input type="text" name="fname" placeholder="First Name" class="form-control" /><br />
+ 					Last Name<br /><input type="text" name="lname" placeholder="Last Name"  class="form-control"/><br />
+ 					Surname<br /><input type="text" name="sname" placeholder="Surname"  class="form-control"/><br />
+ 					Username<br /><input type="text" name="username" placeholder="Username"  class="form-control"/><br />
+ 					Password<br /><input type="text" name="password" placeholder="Password"  class="form-control"/><br />
+ 					Re-enter password<br /><input type="text" name="re_password" placeholder="Reenter Password"  class="form-control"/><br />
+ 			</div>
+ 			<div class="modal-footer">
+ 				<button class="btn btn-primary pull-right" id="register">Submit</button>
+ 				</form>
+ 			</div>
+
+ 		</div>
+ 	</div>
+ </div>
+ <!--End of Modal-->
 	<div id="start" class="col-md-12 pull-right"></div> 
 
 </div>
