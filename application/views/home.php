@@ -36,11 +36,9 @@
       <div class="container">
         <h1>Looking for Work?</h1>
         <p>Join the #1 global workplace to get access to millions of gigs and job opportunities from thousands of employers near you.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Sign Up now &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button" id = "signup">Sign Up now &raquo;</a></p>
       </div>
     </div>
-	<!-- <div id="start" class="col-md-12 pull-right"></div> -->
-
 	<div id="start" class="col-md-12 pull-right"></div> 
 
 </div>
@@ -53,5 +51,6 @@
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-dom.min.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-with-addons.min.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type = "text/babel" src = "/assets/js/registration.js"></script>
+<script type = "text/babel" src = "<?php print base_url();?>assets/js/registration.js"></script>
+<script type="text/javascript" src = "<?php print base_url();?>assets/js/login.js"></script>
 </html>
