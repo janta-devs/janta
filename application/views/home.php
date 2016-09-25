@@ -68,10 +68,6 @@
  </div>
  <!--End of Modal-->
 
-
-
-	<!-- <div id="start" class="col-md-12 pull-right"></div>  -->
-
 </div>
 
 </body>

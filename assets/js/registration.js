@@ -54,11 +54,6 @@ var InitialPage = React.createClass({
 	render: function() 
 	{
 		return (
-			<div className = "panel panel-default">
-			<div className = "panel-heading">
-				<h4>Enter Login Information</h4>
-			</div>
-			<div className = "panel-body">	
 				<form className = "form-inline"> 
 					<div className = "control-group">
 						Username:<br /><input type = "text" name = "username" placeholder = "username" className = "form-control" onBlur = {this.verifier}/><br/>
@@ -74,9 +69,6 @@ var InitialPage = React.createClass({
 						<br /><button type="button" className="btn btn-default" onClick = {this._handleSubmit}>Sign Up</button>
 					</div>
 				</form>
-			</div>
-
-			</div>
 		);
 	}
 });
