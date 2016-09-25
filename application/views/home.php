@@ -29,6 +29,7 @@
             <button type="submit" class="btn btn-success">Sign in</button>
           </form>
         </div><!--/.navbar-collapse -->
+       
         </div>
         </nav>
 <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -39,7 +40,7 @@
         <p><a class="btn btn-primary btn-lg" href="#" role="button" id = "signup" data-toggle = "modal" data-target = "#register">Sign Up now &raquo;</a></p>s
       </div>
     </div>
-
+     
  <!--Creating the modal for registration-->
  <div class="modal" id = "register">
  	<div class="modal-dialog">
@@ -47,13 +48,14 @@
  			
  			<div class="modal-header"><h4>Register</h4></div>
  			<div class="modal-body">
+      <div class="alert alert-success" style="display: none;">Please fill all the fields</div>
  				<form class="form-inline" id="registration">
  					Username<br /><input type="text" name="username" placeholder="Username"  class="form-control"/><br />
  					Password<br /><input type="password" name="password" placeholder="Password"  class="form-control"/><br />
  					Re-enter password<br /><input type="password" name="re_password" placeholder="Reenter Password"  class="form-control"/><br />
  			</div>
  			<div class="modal-footer">
- 				<button class="btn btn-primary pull-right" id="register" data-dismiss = "modal">Submit</button>
+ 				<button class="btn btn-primary pull-right" id="register">Submit</button>
  				</form>
  			</div>
 

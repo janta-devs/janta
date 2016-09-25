@@ -15,7 +15,7 @@ class My_Model extends CI_Model
 		}
 		else
 		{
-			print json_encode(['exists'=>TRUE, 'data'=>$data]);
+			print json_encode(['exists'=>TRUE]);
 		}
 	}
 	public function update($initial_data, $new_data)

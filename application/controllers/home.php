@@ -36,7 +36,7 @@ class Home extends CI_Controller{
 	public function delete(){
 		$this->load->model('user_login');
 		$user_login = new user_login();
-		$data = ['username'=>'Jadz', 'password'=>'ngayo','re_password'=>'ngayo'];
+		$data = ['username'=>'theantonymars@gmail.com'];
 		$user_login->delete($data);
 	}
 
