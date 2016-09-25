@@ -24,7 +24,7 @@ class My_Model extends CI_Model
 		{
 			$res = $this->db->get_where( $this::DB_TABLE, $initial_data);
 			$this->{$this::DB_TABLE_PK} = $res->row()->login_id;
-			($this->db->update($this::DB_TABLE, $new_data, [$this::DB_PK_NAME => $this::DB_TABLE_PK]) == True )?
+			return ($this->db->update($this::DB_TABLE, $new_data, [$this::DB_PK_NAME => $this::DB_TABLE_PK]) == True )?
 			print json_encode("updated") : print json_encode('update failed');
 		}
 	}

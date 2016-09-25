@@ -35,9 +35,6 @@ signup_button.on('click', (function(event) {
 	})
 	.fail(function() {
 		alert_div.show('slow').addClass('alert-danger').html('User is already register');
-	})
-	.always(function() {
-		console.log("complete");
 	});
 }));
 
