@@ -39,7 +39,11 @@
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Sign Up now &raquo;</a></p>
       </div>
     </div>
+<<<<<<< HEAD
 	<!-- <div id="start" class="col-md-12 pull-right"></div> -->
+=======
+	<!--<div id="start" class="col-md-12 pull-right"></div> -->
+>>>>>>> 1015509db5d9405fd9e443ae768fe73e9a8d9477
 </div>
 
 </body>
@@ -50,5 +54,5 @@
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-dom.min.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-with-addons.min.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type = "text/babel" src = "<?php print base_url();?>assets/js/registration.js"></script>
+<script type = "text/babel" src = "janta/assets/js/registration.js"></script>
 </html>
