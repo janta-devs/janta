@@ -30,7 +30,7 @@
 
 <!--container -->
 <div class="container-fluid">
-	<div id="start" class="col-md-12 pull-right"></div> 
+	<div id="start" class="col-md-12 pull-right" style="position: relative; padding-top: 10%"></div> 
 </div>
 <!-- end of container -->
 </body>
