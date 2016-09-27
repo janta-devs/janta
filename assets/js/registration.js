@@ -84,6 +84,9 @@ var StartPage = React.createClass({
 		if( $(TargetButton).attr('name') === 'job_seeker' ){
 			ReactDOM.render(<StepOne />, document.getElementById('start'));
 		}
+		else if( $(TargetButton).attr('name') === 'employer' ){
+			location.href = "/janta/index.php/Employer_registration";
+		}
 	},
 	render: function() {
 		return (

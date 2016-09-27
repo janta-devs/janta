@@ -339,7 +339,7 @@
 </body>
 
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/jquery/dist/jquery.min.js"></script>
-<!--<script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>-->
+<script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react.min.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-dom.min.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-with-addons.min.js"></script>
