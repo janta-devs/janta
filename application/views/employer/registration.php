@@ -5,6 +5,8 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/all.css">
 	<link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/template.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
+  <script src="https://js-agent.newrelic.com/nr-974.min.js"></script>
  
   <script type="text/javascript">
    
@@ -75,12 +77,12 @@
         
         <li class="active">
           <a marked="1" tabindex="-1" href="../home" class="waves-effect waves-light">
-            <i class="icon ti-dashboard"></i>
+            <i class="icon ti-user"></i>
             <span class="text">Personal Details</span>
           </a></li>
                   <li>
             <a marked="1" tabindex="-1" href="#" class="waves-effect waves-light">
-              <i class="icon ti-user"></i>
+              <i class="icon ti-agenda"></i>
               <span class="text">My Jobs</span>
             </a>
           </li>
@@ -92,13 +94,13 @@
           </li>
                   <li>
             <a marked="1" tabindex="-1" href="#" class="waves-effect waves-light">
-              <i class="icon ti-harddrives"></i>
+              <i class="icon ti-wallet"></i>
               <span class="text">My Payments</span>
             </a>
           </li>
                   <li>
             <a marked="1" tabindex="-1" href="#" class="waves-effect waves-light">
-              <i class="icon ti-download"></i>
+              <i class="icon ti-settings"></i>
               <span class="text">Settings</span>
             </a>
           </li>
