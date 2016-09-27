@@ -1,5 +1,5 @@
 <?php
-class My_Model extends CI_Model
+class MY_Model extends CI_Model
 {
 	const DB_TABLE = "abstract";		// the name of the table being worked on			
 	const DB_TABLE_PK = "abstract";		// the value of the primary key e.g. 1, 100 depending on user's number in DB
