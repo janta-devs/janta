@@ -276,12 +276,17 @@
                     <li>
                       <input type="image_id" name="filestyle" tabindex="-1" style="position: absolute; clip: rect(0px, 0px, 0px, 0px);" name="image_id" type="file">
                       <div class="bootstrap-filestyle input-group">
-                        <input type="text" name="" class="form-control" disabled=""><span class="group-span-filestyle input-group-btn" tabindex="0"></span>
+                        <input type="text" name="" class="form-control" disabled="disabled" type="text"><span class="group-span-filestyle input-group-btn" tabindex="0">
+                          <label for="image_id" class="btn btn-file-upload">
+                            <span class="glyphicon glyphicon-folder-open"></span>
+                            <span class="buttonText">Choose File</span>
+                          </label>
+                        </span>
                       </div>
                     </li>
                     <li>
                       <div id="avatar">
-                        <img id="image_empty" class="image-polaroid" src="" alt="">
+                        <img id="image_empty" class="image-polaroid" src="<?php print base_url();?>assets/bower_components/bootstrap/dist/images/avatar.png" alt="">
                       </div>
                     </li>
                   </ul>
