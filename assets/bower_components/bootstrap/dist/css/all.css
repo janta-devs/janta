@@ -11354,12 +11354,16 @@ html {
 }
 .left-bar .admin-logo,
 .side-bar .admin-logo {
-  background-color: #489ee7;
+  background-color: #337ab7;
   min-height: 60px;
   position: absolute !important;
   /*width: 100%;*/
   width: inherit;
   z-index: 999;
+  border-color: #2e6da4;
+-webkit-box-shadow: 0 0 2px rgba(0,0,0,.7);
+-moz-box-shadow: 0 0 2px rgba(0,0,0,.7);
+box-shadow: 0 0 2px rgba(0,0,0,.7)
 }
 .left-bar .admin-logo .logo-holder,
 .side-bar .admin-logo .logo-holder {
@@ -15986,7 +15990,10 @@ body {
   color: #255CB3;
 }
 .top-bar {
-  background-color: #489ee7;
+  background-color: #337ab7;
+  -webkit-box-shadow: 0 0 2px rgba(0,0,0,.7);
+-moz-box-shadow: 0 0 2px rgba(0,0,0,.7);
+box-shadow: 0 0 2px rgba(0,0,0,.7)
 }
 .navbar-breadcrumb > a {
   color: white !important;
