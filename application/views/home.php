@@ -37,7 +37,7 @@
       <div class="container">
         <h1>Looking for Work?</h1>
         <p class='jumbotron-text'>Join the #1 global workplace to get access to millions of gigs and job opportunities from thousands of employers near you.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button" id = "signup" data-toggle = "modal" data-target = "#register">Sign Up now &raquo;</a></p>s
+        <p><a class="btn btn-primary btn-lg" href="" role="button" id = "signup" data-toggle = "modal" data-target = "#register">Sign Up now &raquo;</a></p>
       </div>
     </div>
      
@@ -72,7 +72,10 @@
 </div>
 
 </body>
-
+<!-- <?php
+  // $js_setting = ['localhost' => base_url()];
+ // print json_encode( $js_setting );
+ ?> -->
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react.min.js"></script>
