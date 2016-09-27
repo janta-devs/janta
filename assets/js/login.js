@@ -20,7 +20,7 @@ signup_button.on('click', (function(event) {
 	event.stopPropagation();
 	$data = form.serialize();			//capturing form data
 	$.ajax({
-		url: '/index.php/home/register',
+		url: '/janta/index.php/Home/register',
 		type: 'POST',
 		dataType: 'json',
 		data: $data,
@@ -30,15 +30,17 @@ signup_button.on('click', (function(event) {
 		if( res['status'] == 'registered')
 		{
 			alert_div.show('slow').removeClass('alert-danger').addClass('alert-success').html('Successfully registered');
-			location.href = "http://localhost/janta/index.php/registration/step_two";
+			location.href = "/janta/index.php/Employee_registration/step_two";
 		}else if( res['exists'] == true )
 		{
 			alert_div.show('slow').removeClass('alert-success').addClass('alert-danger').html('User is already register');
+			console.log( res );
 		}
 	})
-	.fail(function() 
+	.fail(function( res ) 
 	{
-		alert_div.show('slow').addClass('alert-danger').html('User is already register');
+		alert_div.show('slow').addClass('alert-danger').html('The server has an internal error, sorry!');
+		console.log( res );
 	});
 }));
 
