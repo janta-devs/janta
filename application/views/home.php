@@ -45,7 +45,6 @@
  <div class="modal" id = "register">
  	<div class="modal-dialog">
  		<div class="modal-content">
- 			
  			<div class="modal-header">
       <h4>Register</h4>
       </div>
