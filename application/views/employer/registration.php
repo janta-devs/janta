@@ -169,7 +169,7 @@
                   <a marked="1" tabindex="-1" title="" href="#" data-toggle="modal" data-target="#myModal"><i class="ion-edit"></i><span class="text">Edit profile</span></a>
                 </li>
                                       <li>
-                  <a marked="1" href="#" tabindex="-1"><i class="ion-clock"></i>Calender</a>                 </li>
+                  <a marked="1" href="#" tabindex="-1"><i class="ion-android-calendar"></i>Calender</a>                 </li>
                                 
                 <li>
                 <a marked="1" href="#" class="logout_button" tabindex="-1"><i class="ion-power"></i><span class="text">Logout</span></a>                </li>     
