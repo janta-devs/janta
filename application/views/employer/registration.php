@@ -7,21 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/template.css">
  
   <script type="text/javascript">
-      
-    $(document).on('show.bs.modal','.bootbox.modal', function (e) 
-    {
-      var isShown = ($(".bootbox.modal").data('bs.modal') || {}).isShown;
-      //If we have a dialog already don't open another one
-      if (isShown)
-      {
-        //Cleanup the dialog(s) that was added to dom
-        $('.bootbox.modal:not(:first)').remove();
-        
-        //Prevent double modal from showing up
-        return e.preventDefault();
-      }
-    });
-    
+   
     
     toastr.options = {
       "closeButton": true,
@@ -118,7 +104,7 @@
           </li>
                   <li>
             <a marked="1" tabindex="-1" href="#" class="waves-effect waves-light">
-              <i class="icon ti-bar-chart"></i>
+              <i class="icon ti-email"></i>
               <span class="text">Notifications</span>
             </a>
           </li>
