@@ -20,7 +20,7 @@ signup_button.on('click', (function(event) {
 	event.stopPropagation();
 	$data = form.serialize();			//capturing form data
 	$.ajax({
-		url: 'http://localhost/janta/index.php/home/register',
+		url: '/index.php/home/register',
 		type: 'POST',
 		dataType: 'json',
 		data: $data,
