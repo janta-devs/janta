@@ -50,13 +50,13 @@ var Corporate = React.createClass({
 		<div className = "panel-body">
 			<form className = "form-inline">
 				Country: <br /><input type = "text" name = "country" className = "form-control" placeholder = "Country"/><br />
-				Locality: <br /><input type = "text" name = "estate_locality" className = "form-control" placeholder = "locality"/><br />
-				Company Name: <br /><input type = "text" name = "company_name" className = "form-control" placeholder = "company_name"/><br />
-				Phone Number 1: <br /><input type = "number" name = "phone1" className = "form-control" placeholder = "phone_one"/><br />
-				Phone Number 2: <br /><input type = "number" name = "phone2" className = "form-control" placeholder = "phone_two"/><br />
-				Email: <br /><input type = "email" name = "email" className = "form-control" placeholder = "email"/><br /><br />
+				Locality: <br /><input type = "text" name = "estate_locality" className = "form-control" placeholder = "Locality"/><br />
+				Company Name: <br /><input type = "text" name = "company_name" className = "form-control" placeholder = "Company Name"/><br />
+				Phone Number 1: <br /><input type = "number" name = "phone1" className = "form-control" placeholder = "Phone number 1"/><br />
+				Phone Number 2: <br /><input type = "number" name = "phone2" className = "form-control" placeholder = "Phone number 2"/><br />
+				Email: <br /><input type = "email" name = "email" className = "form-control" placeholder = "Email"/><br /><br />
 				<button type="button" className="btn btn-success" onClick={this._handleClick}>Submit</button>			
-				<button type="button" className="btn btn-success pull-right" onClick = {this._back}>Back</button>
+				<button type="button" className="btn btn-primary pull-right" onClick = {this._back}>Back</button>
 			</form>
 		</div>
 		</div>
