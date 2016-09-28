@@ -30,8 +30,8 @@
 
 <!--container -->
 <div class="container-fluid">
-   <div id="status" class="col-md-12 pull-right" style="position: relative;"></div> 
-  <div id="choice" class="col-md-12 pull-right" style="position: relative; padding-top: .5%;"></div> 
+   <div id="status" class="col-md-12 alert alert-warning" style="position: relative; padding-top: 4.5%;"><center>Please fill in the required fields</center></div> 
+  <div id="choice" class="col-md-12 pull-right" style="position: relative; padding-top: .2%"></div> 
 </div>
 <!-- end of container -->
 </body>

@@ -1,17 +1,5 @@
 var data = {};
-
-var StatusBar = React.createClass({
-getInitialState: function(){
-	return{ information: "This is the status DIV" }
-},
-render: function() {
-	return (
-		<div className="alert ">
-			{this.state.Information}
-		</div>
-	);
-}
-});
+var status = $('div#status');
 var Corporate = React.createClass({
 	getInitialState: function()
 	{
@@ -36,10 +24,10 @@ var Corporate = React.createClass({
 			data: data,
 		})
 		.done(function( response ) {
-			if( response['status'] == 'registered'){
-
+			if( response['status'] == 'registered'){	
+				status.show('slideDown').removeClass('warning').addClass('success').html("User is Registered");
 			}else if( response['exists'] == true ){
-
+				status.show('slideDown').removeClass('success').addClass('warning').html("User is already Registered!!");
 			}
 		})
 		.fail(function( response ) {
@@ -97,7 +85,11 @@ var Individual = React.createClass({
 			data: data,
 		})
 		.done(function( response ) {
-			console.log( response );
+			if( response['status'] == 'registered'){
+				status.show().removeClass('warning').addClass('success').html("User is Registered");
+			}else if( response['exists'] == true ){
+				status.show().removeClass('success').addClass('warning').html("User is already Registered!!");
+			}
 		})
 		.fail(function( response ) {
 			console.log( response );
@@ -170,6 +162,7 @@ var ComboBox = React.createClass({
 			ReactDOM.render(<Individual employee_type = {$node.val()}/>, document.getElementById('choice'));
 		}
 		else if( $node.val() == 'corporate' ){
+			//console.log( ReactDOM.findDOMNode( this ) );
 			ReactDOM.render(<Corporate employee_type = {$node.val()} />, document.getElementById('choice'));
 		}
 	},
@@ -193,6 +186,4 @@ var ComboBox = React.createClass({
 	}
 });
 
-
-ReactDOM.render(<StatusBar />, document.getElementById('status'));
 ReactDOM.render(<ComboBox />, document.getElementById('choice'));
