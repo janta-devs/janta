@@ -5,6 +5,11 @@ var Corporate = React.createClass({
 	{
 		return { header: this.props.employee_type }
 	},
+	_back: function( event ){
+		event.preventDefault();
+		event.stopPropagation();
+		location.href = "";
+	},
 	_handleClick: function( event )
 	{
 		event.preventDefault();
@@ -51,6 +56,7 @@ var Corporate = React.createClass({
 				Phone Number 2: <br /><input type = "number" name = "phone2" className = "form-control" placeholder = "phone_two"/><br />
 				Email: <br /><input type = "email" name = "email" className = "form-control" placeholder = "email"/><br /><br />
 				<button type="button" className="btn btn-success" onClick={this._handleClick}>Submit</button>			
+				<button type="button" className="btn btn-success pull-right" onClick = {this._back}>Back</button>
 			</form>
 		</div>
 		</div>
@@ -61,6 +67,11 @@ var Corporate = React.createClass({
 var Individual = React.createClass({
 	getInitialState: function(){
 		return { header: this.props.employee_type }
+	},
+	_back: function( event ){
+		event.preventDefault();
+		event.stopPropagation();
+		location.href = "";
 	},
 	_handleClick: function( event ){
 		event.preventDefault();
@@ -142,8 +153,10 @@ var Individual = React.createClass({
 				Certificate: <br /><input type = "email" name = "certificate" className = "form-control" placeholder = "Certificate"/><br />
 				Institution Name: <br /><input type = "email" name = "school" className = "form-control" placeholder = "Institution Name"/><br /><br />
 				<button type="button" className="btn btn-success" onClick={this._handleClick}>Submit</button>			
+				<button type="button" className="btn btn-primary pull-right" onClick = {this._back}>Back</button>
 			</form>
 			</div>
+					
 			</div>
 		);
 	}
