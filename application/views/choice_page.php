@@ -7,7 +7,6 @@
   <link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/template.css">
 </head>
 <body>
-
 <!--nav bar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
 <div class="container">

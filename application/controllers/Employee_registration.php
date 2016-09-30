@@ -16,6 +16,13 @@ class Employee_registration extends CI_Controller{
 		$Employee = new Employee();
 		$Employee->insert( $data );
 	}
+
+	public function profile(){
+		$this->load->model('Employee');
+		$employee = new Employee();
+		$data['user_info'] = $employee->get();
+		$this->load->view('employee/profile.php', $data);
+	}
 }
 
 ?>

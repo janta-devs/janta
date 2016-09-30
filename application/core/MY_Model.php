@@ -77,7 +77,7 @@ class MY_Model extends CI_Model
 		{
 			$model = new $class;
 			$model->populate($row);
-			$return_val[$row->{$this::DB_TABLE_PK}] = $model;
+			@$return_val[$row->{$this::DB_TABLE_PK}] = $model;
 		}
 		return $return_val;
 	}
