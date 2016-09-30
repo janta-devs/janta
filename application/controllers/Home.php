@@ -13,12 +13,14 @@ class Home extends CI_Controller{
 	{
 		$this->load->model('user_login');
 		$data = $this->input->post();
-		if(isset( $data ) && is_array( $data ) && !empty( $data ))
-		{
+		if( $data['email'] == '' || $data['username'] == '' ){
+			print json_encode(['status'=>'error']);
+		}
+		else if(isset( $data ) && is_array( $data ) && !empty( $data )){
 			unset($data['re_password']);
 			$user_login = new user_login();
 			$user_login->insert( $data );
-		 }
+		}
 	}
 	public function update(){
 		$this->load->model('user_login');

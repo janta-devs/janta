@@ -36,6 +36,11 @@ signup_button.on('click', (function(event) {
 			alert_div.show('slow').removeClass('alert-success').addClass('alert-danger').html('User is already register');
 			console.log( res );
 		}
+		else if( res['status'] == 'error' )
+		{
+			alert_div.show('slow').removeClass('alert-success').addClass('alert-danger').html('Please fill the form');
+			console.log( res );
+		}
 	})
 	.fail(function( res ) 
 	{
