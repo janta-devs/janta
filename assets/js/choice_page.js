@@ -31,6 +31,7 @@ var Corporate = React.createClass({
 		.done(function( response ) {
 			if( response['status'] == 'registered'){	
 				status.show('slideDown').removeClass('warning').addClass('success').html("User is Registered");
+				location.href = "/janta/index.php/Employee_registration/profile";
 			}else if( response['exists'] == true ){
 				status.show('slideDown').removeClass('success').addClass('warning').html("User is already Registered!!");
 			}
@@ -98,6 +99,7 @@ var Individual = React.createClass({
 		.done(function( response ) {
 			if( response['status'] == 'registered'){
 				status.show().removeClass('warning').addClass('success').html("User is Registered");
+				location.href = "/janta/index.php/Employee_registration/profile";
 			}else if( response['exists'] == true ){
 				status.show().removeClass('success').addClass('warning').html("User is already Registered!!");
 			}
