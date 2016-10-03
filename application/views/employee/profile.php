@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/all.css">
 	<link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/template.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
-  <script src="https://js-agent.newrelic.com/nr-974.min.js"></script>
+  <!-- <script src="https://js-agent.newrelic.com/nr-974.min.js"></script> -->
  
   <script type="text/javascript">
    
@@ -110,9 +110,9 @@
             </a>
           </li>
                   <li>
-            <a marked="1" tabindex="-1" href="#" class="waves-effect waves-light">
+            <a marked="1" tabindex="-1" href="#" class="waves-effect waves-light" id='orders-tab'>
               <i class="icon ti-email"></i>
-              <span class="text">Notifications</span>
+              <span class="text">Available Orders</span>
             </a>
           </li>
                 
@@ -128,6 +128,7 @@
         <nav class="navbar navbar-default top-bar">
           <div class="menu-bar-mobile" id="open-left"><i class="ti-menu"></i></div>
           <div class="nav navbar-nav top-elements navbar-breadcrumb hidden-xs">
+
              <a marked="1" tabindex="-1" href="/home">Profile</a><a marked="1" tabindex="-1" href="#">Employer</a><a marked="1" tabindex="-1" class="current" href="#">Edit Profile</a>         </div>  
              <ul class="nav navbar-nav navbar-right top-elements">                              
                                           
@@ -184,7 +185,7 @@
         </nav>
       </div>
       <!-- top-bar -->
-      <div class="main-content">
+      <div class="main-content container-fluid">
 
 <div class="row" id="form">
   <div class="spinner" id="grid-loader" style="display:none">
@@ -349,4 +350,5 @@
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-dom.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-with-addons.min.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type = "text/babel" src = "<?php print base_url();?>assets/js/orders.js"></script>
 </html>
