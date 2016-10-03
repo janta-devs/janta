@@ -84,26 +84,15 @@
           <a marked="1" tabindex="-1" href="../home" class="waves-effect waves-light">
             <i class="icon ti-user"></i>
             <span class="text">Personal Details</span>
-          </a></li>
-                  <li>
+          </a>
+        </li>
+          <li>
             <a marked="1" tabindex="-1" href="#" class="waves-effect waves-light">
               <i class="icon ti-agenda"></i>
               <span class="text">My Jobs</span>
             </a>
           </li>
-                  <li>
-            <a marked="1" tabindex="-1" href="#" class="waves-effect waves-light">
-              <i class="icon ti-harddrive"></i>
-              <span class="text">Employees</span>
-            </a>
-          </li>
-                  <li>
-            <a marked="1" tabindex="-1" href="#" class="waves-effect waves-light">
-              <i class="icon ti-wallet"></i>
-              <span class="text">My Payments</span>
-            </a>
-          </li>
-                  <li>
+          <li>
             <a marked="1" tabindex="-1" href="#" class="waves-effect waves-light">
               <i class="icon ti-settings"></i>
               <span class="text">Settings</span>
