@@ -5,6 +5,13 @@
 	<link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/template.css">
 	<!-- <link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/jumbotron.css"> -->
+  <script type="text/javascript">
+  $(document).ready(function()
+  {
+    $("#navbar input:first").focus();
+  });
+  </script>
+ 
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -20,7 +27,7 @@
         </div>
          <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right">
-            <div class="form-group">
+            <div id="email" class="form-group">
               <input type="text" placeholder="Email" class="form-control">
             </div>
             <div class="form-group">

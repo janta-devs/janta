@@ -3,59 +3,12 @@
 <head>
 	<title>Register</title>
 	<meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
 	<link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/all.css">
 	<link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/template.css">
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
-  <script src="https://js-agent.newrelic.com/nr-974.min.js"></script>
+  
  
-  <script type="text/javascript">
-   
-    
-    toastr.options = {
-      "closeButton": true,
-      "debug": false,
-      "newestOnTop": false,
-      "progressBar": false,
-      "positionClass": "toast-top-right",
-      "preventDuplicates": false,
-      "onclick": null,
-      "showDuration": "300",
-      "hideDuration": "1000",
-      "timeOut": "5000",
-      "extendedTimeOut": "1000",
-      "showEasing": "swing",
-      "hideEasing": "linear",
-      "showMethod": "fadeIn",
-      "hideMethod": "fadeOut"
-    }
-    
-    $.fn.editableform.buttons = 
-      '<button tabindex="-1" type="submit" class="btn btn-primary btn-sm editable-submit">'+
-        '<i class="icon ti-check"></i>'+
-      '</button>'+
-      '<button tabindex="-1" type="button" class="btn btn-default btn-sm editable-cancel">'+
-        '<i class="icon ti-close"></i>'+
-      '</button>';
-    
-    $.fn.editable.defaults.emptytext = "Empty";
-    
-    $(document).ready(function()
-    {
-      $(".wrapper.mini-bar .left-bar").hover(
-         function() {
-           $(this).parent().removeClass('mini-bar');
-         }, function() {
-           $(this).parent().addClass('mini-bar');
-         }
-       );
-
-        $('.menu-bar').click(function(e){                  
-          e.preventDefault();
-            $(".wrapper").toggleClass('mini-bar');        
-        }); 
-              
-          });
-  </script>
+  
 </head>
 <body>
 
@@ -190,7 +143,7 @@
   <div class="col-md-12">
 
   <!-- beginning of the form for individual employer type -->
-  <form id="customer_form" class="form-horizontal" novalidate="novalidate" action="#" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+  <form id="employer_form" class="form-horizontal" novalidate="novalidate" action="#" enctype="multipart/form-data" method="post" accept-charset="utf-8">
 
       <div class="panel panel-piluku">
         <div class="panel-heading">
@@ -207,15 +160,119 @@
           
           <label class="required col-sm-3 col-md-3 col-lg-2 control-label wide">Choose type :</label>
           <div class="col-sm-9 col-md-9 col-lg-10">
-            <select name="employer_type" class="form-control">
+            <select name="employer_type" id="employer_type" class="form-control">
+              <option>(Choose type)</option>
               <option value="individual">Individual</option>
               <option value="corporate">Corporate</option>
             </select>
           </div>
         </div>
-          
+          <div class="row">
+
+             <div class="col-md-12">
+             <div class="corporate" style="display: none;">
+                <div class="form-group">
+                
+                <label class="required col-sm-3 col-md-3 col-lg-2 control-label" for="company_name">Company Name :</label>
+                <div class="col-sm-9 col-md-9 col-lg-10">
+                  <input id="company_name" type="text" name="company_name" class="form-control">
+                </div>
+                
+                </div>
+                <div class="form-group">
+                
+                <label class="required col-sm-3 col-md-3 col-lg-2 control-label" for="phone_number">Phone :</label>
+                <div class="col-sm-9 col-md-9 col-lg-10">
+                  <input id="phone_number" type="text" name="phone_number" class="form-control" value="">
+                </div>
+                
+                </div>
+                <div class="form-group">
+                 
+                  <label class="col-sm-3 col-md-3 col-lg-2 control-label" for="country">Country :</label>
+                  <div class="col-sm-9 col-md-9 col-lg-10">
+                    <input id="country" type="text" value="" name="country" class="form-control">
+                  </div>
+                  
+                </div>
+               
+                <div class="form-group">
+                 
+                  <label class="col-sm-3 col-md-3 col-lg-2 control-label" for="county">County/Province :</label>
+                  <div class="col-sm-9 col-md-9 col-lg-10">
+                    <input id="county" type="text" value="" name="county" class="form-control">
+                  </div>
+                  
+                </div>
+                <div class="form-group">
+                  
+                  <label class="col-sm-3 col-md-3 col-lg-2 control-label" for="city">City/Town :</label>
+                  <div class="col-sm-9 col-md-9 col-lg-10">
+                    <input id="city" type="text" value="" name="city" class="form-control">
+                  </div>
+                  
+                </div>
+                <div class="form-group">
+                
+                <label class="col-sm-3 col-md-3 col-lg-2 control-label" for="suburb">Locality/Estate :</label>
+                <div class="col-sm-9 col-md-9 col-lg-10">
+                  <input id="suburb" type="text" value="" name="suburb" class="form-control">
+                </div>
+              
+                </div>
+                 <div class="form-group">
+                  
+                  <label class="col-sm-3 col-md-3 col-lg-2 control-label" for="address_1">Address 1 :</label>
+                  <div class="col-sm-9 col-md-9 col-lg-10">
+                    <input id="address_1" type="text" value="" name="address_1" class="form-control">
+                  </div>
+                  
+                </div>
+                <div class="form-group">
+                  
+                  <label class="col-sm-3 col-md-3 col-lg-2 control-label" for="address_2">Address 2 :</label>
+                  <div class="col-sm-9 col-md-9 col-lg-10">
+                    <input id="address_2" type="text" value="" name="address_2" class="form-control">
+                  </div>
+                 
+                </div>
+                 <div class="form-group">
+                
+                <label class="col-sm-3 col-md-3 col-lg-2 control-label" for="image_id">Upload Logo :</label>
+                <div class="col-sm-9 col-md-9 col-lg-10">
+                  <ul class="list-unstyled avatar-list">
+                    <li>
+                      <input type="image_id" name="filestyle" tabindex="-1" style="position: absolute; clip: rect(0px, 0px, 0px, 0px);" name="image_id" type="file">
+                      <div class="bootstrap-filestyle input-group">
+                        <input type="text" name="" class="form-control" disabled="disabled" type="text"><span class="group-span-filestyle input-group-btn" tabindex="0">
+                          <label for="image_id" class="btn btn-file-upload">
+                            <span class="glyphicon glyphicon-folder-open"></span>
+                            <span class="buttonText">Choose File</span>
+                          </label>
+                        </span>
+                      </div>
+                    </li>
+                    <li>
+                      <div id="avatar">
+                        <img id="image_empty" class="image-polaroid" src="<?php print base_url();?>assets/bower_components/bootstrap/dist/images/avatar.png" alt="">
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                
+                </div>
+                
+                <div class="form-actions pull-right">
+                  <button id="cancel" class="submit_button btn btn-danger" name="cancel" type="button" value="true">Cancel</button>
+                  <input id="submitf" class="submit_button btn btn-primary" type="submit" name="submitf" value="Submit">
+                </div>
+                </div>
+
+           </div>
+           </div>
             <div class="row">
                           <div class="col-md-12">
+                          <div class="individual" style="display: none;">
                 <div class="form-group">
                 
                 <label class="required col-sm-3 col-md-3 col-lg-2 control-label" for="first_name">First Name :</label>
@@ -258,7 +315,7 @@
                 </div>
                 <div class="form-group">
                 
-                <label class="col-sm-3 col-md-3 col-lg-2 control-label" for="image_id">Choose Image :</label>
+                <label class="col-sm-3 col-md-3 col-lg-2 control-label" for="image_id">Profile Photo :</label>
                 <div class="col-sm-9 col-md-9 col-lg-10">
                   <ul class="list-unstyled avatar-list">
                     <li>
@@ -328,7 +385,9 @@
                 </div>
                 
               </div>
-            </div>
+              </div>
+            
+            
   </form>
    <!-- End of Individual Employer form -->
 
@@ -339,10 +398,11 @@
 </body>
 
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+<script type = "text/javascript" src = "<?php print base_url();?>assets/js/employer.js"></script>
+<!--<script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react.min.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-dom.min.js"></script>
-<script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-with-addons.min.js"></script>
+<script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-with-addons.min.js"></script>-->
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type = "text/babel" src = "<?php print base_url();?>assets/js/registration.js"></script>
 </html>
