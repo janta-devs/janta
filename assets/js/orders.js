@@ -140,12 +140,13 @@ var TableCreator = React.createClass({
 				</tbody>
 				<tfoot>
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td>_</td>
+							<td>_</td>
+							<td>_</td>
+							<td>_</td>
+							<td>_</td>
+							<td>_</td>
+							<td>_</td>
 						</tr>
 				</tfoot>
 
