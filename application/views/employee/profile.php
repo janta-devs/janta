@@ -290,7 +290,7 @@
                   
                   <label class="col-sm-3 col-md-3 col-lg-2 control-label" for="address_1">Address 1 :</label>
                   <div class="col-sm-9 col-md-9 col-lg-10">
-                    <input id="address_1" type="text" value="" name="address_1" class="form-control">
+                    <input id="address_1" type="text" value="<?php print $obj->address; ?>" name="address_1" class="form-control">
                   </div>
                   
                 </div>
