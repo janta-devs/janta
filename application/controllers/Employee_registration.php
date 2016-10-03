@@ -11,7 +11,7 @@ class Employee_registration extends CI_Controller{
 	}
 	public function employeeData(){
 		$data = $this->input->post();
-		$data['login_id'] = 6;
+		$data['login_id'] = 15;
 		$this->load->model('Employee');
 		$Employee = new Employee();
 		$Employee->insert( $data );
