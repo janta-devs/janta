@@ -21,10 +21,7 @@ class Employee_registration extends CI_Controller{
 	{
 		$this->load->model('Employee');
 		$employee = new Employee();
-		$data['user_info'] = $employee->get();
-		// $data2 = $employee->pull_multiple_tables( 6 );
-		// print_r( $data2->row() );
-
+		$data['user_info'] = $employee->pull_multiple_tables( 6 );
 		$this->load->view('employee/profile.php', $data);
 	}
 }

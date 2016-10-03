@@ -23,3 +23,6 @@ and open the template in the editor.
 .jumbotron-text{
     font-family: sans-serif;
 }
+.chat{
+    cursor: pointer;
+}

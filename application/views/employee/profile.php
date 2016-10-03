@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php 
-  foreach ($user_info as $key => $value) {
-     $obj = $value;
-  }
+$obj = $user_info->row();
 ?>
 <head>
 	<title>Register</title>
@@ -12,11 +10,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/template.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
   <!-- <script src="https://js-agent.newrelic.com/nr-974.min.js"></script> -->
- 
   <script type="text/javascript">
-   
-    
-    toastr.options = {
+  toastr.options = {
       "closeButton": true,
       "debug": false,
       "newestOnTop": false,
@@ -212,12 +207,10 @@
             <div class="row">
                           <div class="col-md-12">
                 <div class="form-group">
-                
-                <label class="required col-sm-3 col-md-3 col-lg-2 control-label" for="first_name">First Name :</label>
-                <div class="col-sm-9 col-md-9 col-lg-10">
-                  <input id="first_name" type="text" name="first_name" class="form-control" value = "<?php print $obj->first_name;?>">
-                </div>
-                
+                  <label class="required col-sm-3 col-md-3 col-lg-2 control-label" for="first_name">First Name :</label>
+                  <div class="col-sm-9 col-md-9 col-lg-10">
+                    <input id="first_name" type="text" name="first_name" class="form-control" value = "<?php print $obj->first_name;?>">
+                  </div>
                 </div>
                 <div class="form-group">
                 
@@ -226,6 +219,24 @@
                   <input id="last_name" type="text" name="last_name" class="form-control" value="<?php print $obj->last_name;?>">
                 </div>
                 
+                </div>
+                  <div class="form-group">
+                  <label class="required col-sm-3 col-md-3 col-lg-2 control-label" for="first_name">User name :</label>
+                  <div class="col-sm-9 col-md-9 col-lg-10">
+                    <input id="user_name" type="text" name="user_name" class="form-control" value = "<?php print $obj->username;?>">
+                  </div>
+                </div>
+                  <div class="form-group">
+                  <label class="required col-sm-3 col-md-3 col-lg-2 control-label" for="first_name">Password :</label>
+                  <div class="col-sm-9 col-md-9 col-lg-10">
+                    <input id="password" type="text" name="first_name" class="form-control" value = "<?php print md5($obj->password);?>">
+                  </div>
+                    <div class="form-group">
+                  <label class="required col-sm-3 col-md-3 col-lg-2 control-label" for="first_name">Repassword :</label>
+                  <div class="col-sm-9 col-md-9 col-lg-10">
+                    <input id="re_password" type="text" name="re_password" class="form-control" value = "<?php print md5($obj->password);?>">
+                  </div>
+                </div>
                 </div>
                 <div class="form-group">
                  
@@ -288,7 +299,7 @@
                   
                   <label class="col-sm-3 col-md-3 col-lg-2 control-label" for="address_2">Address 2 :</label>
                   <div class="col-sm-9 col-md-9 col-lg-10">
-                    <input id="address_2" type="text" value="" name="address_2" class="form-control">
+                    <input id="address_2" type="text" value="<?php print $obj->address; ?>" name="address_2" class="form-control">
                   </div>
                  
                 </div>
