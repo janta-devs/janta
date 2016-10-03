@@ -7,57 +7,57 @@ var dummiedata = [
 },
 {
 	id: 2,
-	title: 'Perl HTTP Module',
+	title: 'GO Language HTTP Module',
 	description: 'Implementing HTTP module for c++ so as to ultimately create an API',
-	duration: '24 Hours',
+	duration: '12 Hours',
 },
 {
 	id: 3,
-	title: 'Java HTTP Module',
+	title: 'C# HTTP Module',
 	description: 'Implementing HTTP module for c++ so as to ultimately create an API',
-	duration: '24 Hours',
+	duration: '3 Hours',
 },
 {
 	id: 4,
 	title: 'Python HTTP Module',
 	description: 'Implementing HTTP module for c++ so as to ultimately create an API',
-	duration: '24 Hours',
+	duration: '4 Hours',
 },
 {
 	id: 5,
 	title: 'PHP HTTP Module',
 	description: 'Implementing HTTP module for c++ so as to ultimately create an API',
-	duration: '24 Hours',
+	duration: '7 Hours',
 },
 {
 	id: 1,
 	title: 'C++ HTTP Module',
 	description: 'Implementing HTTP module for c++ so as to ultimately create an API',
-	duration: '24 Hours',
+	duration: '9 Hours',
 },
 {
 	id: 2,
 	title: 'Perl HTTP Module',
 	description: 'Implementing HTTP module for c++ so as to ultimately create an API',
-	duration: '24 Hours',
+	duration: '9 Hours',
 },
 {
 	id: 3,
 	title: 'Java HTTP Module',
 	description: 'Implementing HTTP module for c++ so as to ultimately create an API',
-	duration: '24 Hours',
+	duration: '2 Hours',
 },
 {
 	id: 4,
 	title: 'Python HTTP Module',
 	description: 'Implementing HTTP module for c++ so as to ultimately create an API',
-	duration: '24 Hours',
+	duration: '16 Hours',
 },
 {
 	id: 5,
 	title: 'PHP HTTP Module',
 	description: 'Implementing HTTP module for c++ so as to ultimately create an API',
-	duration: '24 Hours',
+	duration: '15 Hours',
 }, {
 	id: 1,
 	title: 'C++ HTTP Module',
@@ -68,13 +68,13 @@ var dummiedata = [
 	id: 2,
 	title: 'Perl HTTP Module',
 	description: 'Implementing HTTP module for c++ so as to ultimately create an API',
-	duration: '24 Hours',
+	duration: '7 Hours',
 },
 {
 	id: 3,
 	title: 'Java HTTP Module',
 	description: 'Implementing HTTP module for c++ so as to ultimately create an API',
-	duration: '24 Hours',
+	duration: '6 Hours',
 },
 {
 	id: 4,
@@ -86,7 +86,7 @@ var dummiedata = [
 	id: 5,
 	title: 'Multimedia Programming',
 	description: 'Implementing HTTP module for c++ so as to ultimately create an API',
-	duration: '24 Hours',
+	duration: '11 Hours',
 }
 ].reverse();
 
