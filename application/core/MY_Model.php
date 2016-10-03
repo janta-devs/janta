@@ -87,6 +87,14 @@ class MY_Model extends CI_Model
 		$num_of_affected_rows = $this->db->affected_rows();
 		return ($num_of_affected_rows === 1) ? TRUE : FALSE;
 	}
+
+	public function pull_multiple_tables( $table_array, $id_of_first_table, $primary_key_of_second_table ){
+		$this->db->select('*');
+		$this->db->from( $table_array[0] );
+		$this->db->join(''.$table_array[1].'', ''.$id_of_first_table = $primary_key_of_second_table.'', 'left');
+		$result = $this->db->get();
+		return $result->row;
+	}
 }
 
 ?>
