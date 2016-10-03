@@ -101,7 +101,7 @@ var TableCell = React.createClass({
 						<td>{this.props.duration}</td>
 						<td>DEFAULT</td>
 						<td>MESSAGE</td>
-						<td><button className = "btn btn-danger">&times;</button></td>
+						<td><button className = "btn btn-danger">Discard</button></td>
 					</tr>
 		);
 	}
