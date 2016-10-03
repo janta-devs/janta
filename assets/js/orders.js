@@ -117,13 +117,20 @@ var TableCreator = React.createClass({
 		this.loadData();
 	},
 	render: function(){
-		var a = 0;
-		var populate = this.state.data.map(function( x ) {
-			a = a+=1;
-			return(
-				<TableCell count = { a } title = {x.title} description = {x.description} duration = {x.duration} />
-			)
-		});
+		
+		var populate = this.state.data.map( x => 
+		<TableCell count = { 1 } title = {x.title} description = {x.description} duration = {x.duration} />);
+		
+
+		// var a = 0;
+		// var populate = this.state.data.map(function( x ) {
+		// 	a = a+=1;
+		// 	return(
+		// 		<TableCell count = { a } title = {x.title} description = {x.description} duration = {x.duration} />
+		// 	)
+		// });
+
+
 		return(
 			<table className = "table table-striped table-bordered table-hover">
 				<thead>

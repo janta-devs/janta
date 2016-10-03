@@ -22,9 +22,6 @@ class Employee_registration extends CI_Controller{
 		$this->load->model('Employee');
 		$employee = new Employee();
 		$data['user_info'] = $employee->get();
-
-		print_r( $data );
-
 		// $data2 = $employee->pull_multiple_tables( 6 );
 		// print_r( $data2->row() );
 
