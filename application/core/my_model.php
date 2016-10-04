@@ -1,5 +1,5 @@
 <?php
-class My_Model extends CI_Model
+class MY_Model extends CI_Model
 {
 	const DB_TABLE = "abstract";		// the name of the table being worked on			
 	const DB_TABLE_PK = "abstract";		// the value of the primary key e.g. 1, 100 depending on user's number in DB
@@ -77,7 +77,7 @@ class My_Model extends CI_Model
 		{
 			$model = new $class;
 			$model->populate($row);
-			$return_val[$row->{$this::DB_TABLE_PK}] = $model;
+			@$return_val[$row->{$this::DB_TABLE_PK}] = $model;
 		}
 		return $return_val;
 	}
@@ -86,6 +86,15 @@ class My_Model extends CI_Model
 		$this->db->get_where( $table , $data);
 		$num_of_affected_rows = $this->db->affected_rows();
 		return ($num_of_affected_rows === 1) ? TRUE : FALSE;
+	}
+
+	public function pull_multiple_tables( $id )
+	{
+		$this->db->select('*');
+		$this->db->from('user_login');
+		$this->db->join('employee','user_login.login_id = employee.login_id', 'left');
+		$this->db->where('user_login.login_id = '.$id);
+		return $result = $this->db->get();
 	}
 }
 

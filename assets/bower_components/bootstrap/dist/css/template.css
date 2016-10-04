@@ -23,6 +23,7 @@ and open the template in the editor.
 .jumbotron-text{
     font-family: sans-serif;
 }
+<<<<<<< HEAD
 .error_message
 {
     text-align:center;
@@ -46,3 +47,8 @@ and open the template in the editor.
     border:1px solid #2ca71c;
     font-weight:bold;
 }
+=======
+.chat{
+    cursor: pointer;
+}
+>>>>>>> 869bf7ff500e45a45d335101635ea33ea1b56f85
