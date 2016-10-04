@@ -12,7 +12,7 @@ class Employee_registration extends CI_Controller{
 	public function employeeData()
 	{
 		$data = $this->input->post();
-		$data['login_id'] = 15;
+		$data['login_id'] = 16;
 		$this->load->model('Employee');
 		$Employee = new Employee();
 		$Employee->insert( $data );
@@ -21,7 +21,7 @@ class Employee_registration extends CI_Controller{
 	{
 		$this->load->model('Employee');
 		$employee = new Employee();
-		$data['user_info'] = $employee->pull_multiple_tables( 6 );
+		$data['user_info'] = $employee->pull_multiple_tables( 16 ); 
 		$this->load->view('employee/profile.php', $data);
 	}
 }
