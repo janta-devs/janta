@@ -2,7 +2,6 @@
 <html>
 <?php 
 $obj = $user_info->row();
-print_r( $obj );
 ?>
 <head>
 	<title>Register</title>
