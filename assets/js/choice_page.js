@@ -16,7 +16,6 @@ var ProfilePic = React.createClass({
 			data: data,
 		})
 		.done(function( rs ) {
-          	console.log( rs );
 			self.setState({placeholder: rs.name});
 		});		
 	},
@@ -35,7 +34,7 @@ var ProfilePic = React.createClass({
 		
 	},
 	componentWillUpdate: function( nextProp, nextState ){
-		nextState;
+		console.log(nextState);
 	},
 	_upload: function( event ){
 		event.preventDefault();

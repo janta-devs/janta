@@ -7,7 +7,7 @@ class Photo extends CI_Controller{
 
 		$employee = new Employee();
 		@$path = upload_file();
-		$data1 = ['login_id' => 16 ];
+		$data1 = ['login_id' => 6 ];
 		$data2 = ['profile_photo'=> $path];
 	
 		$employee->update( $data1, $data2 );
