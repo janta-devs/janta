@@ -38,23 +38,25 @@ $(document).ready(function(){
 		wrapper: "li",
 		rules:
 		{
+			employer_type: "required",
 			first_name: "required",
 			last_name: "required",
 			company_name: "required",
 			phone_number: "required",
-			estate_locality: "required",
-			city_town: "required"
+			suburb: "required",
+			city: "required"
+
 
 		},
 		messages:
 		{
-			company_name: "<?php echo 'Please fill out the company name';?>",
-			last_name: "<?php echo 'Please fill out your last name';?>",
-			first_name: "<?php echo 'Please fill out your first name';?>",
-			phone_number: "<?php echo 'Please fill out your phone number';?>",
-			city_town: "<?php echo 'Please select a city/town';?>",
-			estate_locality: "<?php echo 'Please fill out your estae/locality';?>"
+			company_name: "<?php echo $this->lang->line('employer_company_name_required');?>",
+			last_name: "<?php echo $this->lang->line('employer_last_name-required');?>",
+			first_name: "<?php echo $this->lang->line('employer_first_name-required');?>",
+			phone_number: "<?php echo $this->lang->line('common_phone_number1');?>",
+			city_town: "<?php echo $this->lang->line('common_city');?>",
+			estate_locality: "<?php echo $this->lang->line('common_estate_suburb');?>"
 		}
-	})
+	});
 		
 });

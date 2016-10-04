@@ -9,9 +9,7 @@ Determines if a given user; logged in user is an employee*/
 		$this->db->join('user_login', 'user_login.login_id=employer.login_id');
 		$this->db->where('employer.login_id', $login_id);
 		$query = $this->db->get();
-
-
-		return ($query->num_rows()=1);
+		return ($query->num_rows()==1);
 	}
 /*
 Returns all the employers
@@ -43,11 +41,9 @@ Gets information about a particular employer
 		{
 		//GEt empty base parent object, as $employer_id is NOT an emplyer
 		$user_obj = parent::get_info(-1);
-
 		//get all the fields fro the employer table
-		$fields=$this->db->list_fields('employer');
-
-		//append those fields to the base parent oject, we have an oject that is completely empty
+		$fields=$this->db->list_fields('user_login');
+		//append those fields to the base parent oject, we have an object that is completely empty
 		foreach ($user_obj as $field) {
 		 	$user_obj->$field='';
 			} 
@@ -64,7 +60,7 @@ Gets information about a particular employer
 			return $this->db->get();
 		}
 		/*For inserting or updating an employer*/
-		function save(&$user_data, &$employer_data, $employer_id=false)
+		function save(&$user_data, &$employer_data, $employer_id=false, $login_id=false)
 		{
 			$success=false;
 			//these queries are to be ran as a transaction, we want to ensure we either do all or nothing
@@ -160,10 +156,7 @@ Gets information about a particular employer
 		city_town LIKE '%".$this->db->escape_like_str($search)."%' or 
 		CONCAT(`first_name`,' ',`last_name`) LIKE '%".$this->db->escape_like_str($search)."%') and account_status=1");		
 		$this->db->order_by("last_name", "asc");
-		
 		return $this->db->get();	
 	}
-
 }
-
 ?>

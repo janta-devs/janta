@@ -1,0 +1,35 @@
+<?php
+$lang['common_email_invalid_format']='';
+$lang['common_submit']='Submit';
+$lang['common_or']='OR';
+$lang['common_developed_by']='Developed by';
+$lang['common_welcome']='Welcome';
+$lang['common_logout']='Logout';
+$lang['common_list_of']='List of';
+$lang['common_first_name']='First Name';
+$lang['common_last_name']='Last Name';
+$lang['common_email']='E-Mail';
+$lang['common_phone_number1']='Phone Number 1';
+$lang['common_phone_number1']='Phone Number 2';
+$lang['common_address_1']='Address 1';
+$lang['common_address_2']='Address 2';
+$lang['common_city']='City';
+$lang['common_county']='County';
+$lang['common_estate_suburb']='Etate/Suburb';
+$lang['common_zip']='Zip';
+$lang['common_country']='Country';
+$lang['common_comments']='Comments';
+$lang['common_edit']='Edit';
+$lang['common_search']='Search';
+$lang['common_delete']='Delete';
+$lang['common_view_recent_jobs']='View Recent Jobs';
+$lang['common_developer']='Developed by:';
+$lang['common_fields_required_message']='Fields in red are required';
+$lang['common_searched_for']='Searched for';
+$lang['common_first_name_required']='The first name is a required field.';
+$lang['common_last_name_required']='The last name is a required field';
+$lang['common_email_invalid_format']='The e-mail address is not in the proper format';
+$lang['common_confirm_search']='You have selected one or more rows, these will no longer be selected after your search. Are you sure you want to submit this search?';
+$lang['common_no_persons_to_display']='There are no people to display';
+$lang['common_det']='details';
+?>

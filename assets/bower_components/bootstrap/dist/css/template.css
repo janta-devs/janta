@@ -23,3 +23,26 @@ and open the template in the editor.
 .jumbotron-text{
     font-family: sans-serif;
 }
+.error_message
+{
+    text-align:center;
+    background-color:#f68383;
+    border:1px solid #da3232;
+    font-weight:bold;
+}
+
+.warning_mesage
+{
+    text-align:center;
+    background-color:#FBEC5D;
+    border:1px solid #da3232;
+    font-weight:bold;
+}
+
+.success_message
+{
+    text-align:center;
+    background-color:#e1ffdd;
+    border:1px solid #2ca71c;
+    font-weight:bold;
+}

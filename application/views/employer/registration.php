@@ -143,7 +143,10 @@
   <div class="col-md-12">
 
   <!-- beginning of the form for individual employer type -->
-  <form id="employer_form" class="form-horizontal" novalidate="novalidate" action="#" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+ <?php 
+  $user_info;
+  echo form_open ('employers/save/'.$user_info->login_id, array('id'=>'employer_form','class'=>'form-horizontal','novalidate'=>'novalidate','enctype'=>'multipart/form-data','accept-charset'=>'utf-8'));
+  ?>
 
       <div class="panel panel-piluku">
         <div class="panel-heading">
@@ -157,6 +160,7 @@
         </div>
         <div class="panel-body">
         <div class="form-group override-taxes-container">
+        <ul id="error_message_box"></ul>
           
           <label class="required col-sm-3 col-md-3 col-lg-2 control-label wide">Choose type :</label>
           <div class="col-sm-9 col-md-9 col-lg-10">
@@ -388,7 +392,9 @@
               </div>
             
             
-  </form>
+  <?php
+  echo form_close();
+  ?>
    <!-- End of Individual Employer form -->
 
   </div> 
@@ -398,6 +404,7 @@
 </body>
 
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src = "<?php print base_url();?>assets/js/jquery.validate-1.13.1-min.js"></script>
 <script type = "text/javascript" src = "<?php print base_url();?>assets/js/employer.js"></script>
 <!--<script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react.min.js"></script>

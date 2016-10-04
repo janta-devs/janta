@@ -16017,3 +16017,10 @@ box-shadow: 0 0 2px rgba(0,0,0,.7)
 .menu-bar-mobile .ti-menu {
   color: #fff;
 }
+#error_message_box
+{
+	margin-bottom:7px;
+	margin-left:20px;
+	color:red;
+	
+}
