@@ -88,12 +88,13 @@ class MY_Model extends CI_Model
 		return ($num_of_affected_rows === 1) ? TRUE : FALSE;
 	}
 
-	public function pull_multiple_tables( $table_array, $id_of_first_table, $primary_key_of_second_table ){
+	public function pull_multiple_tables( $id )
+	{
 		$this->db->select('*');
-		$this->db->from( $table_array[0] );
-		$this->db->join(''.$table_array[1].'', ''.$id_of_first_table = $primary_key_of_second_table.'', 'left');
-		$result = $this->db->get();
-		return $result->row;
+		$this->db->from('user_login');
+		$this->db->join('employee','user_login.login_id = employee.login_id', 'left');
+		$this->db->where('user_login.login_id = '.$id);
+		return $result = $this->db->get();
 	}
 }
 
