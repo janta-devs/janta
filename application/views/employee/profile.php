@@ -197,9 +197,8 @@ $obj = $user_info->row();
           
           <label class="required col-sm-3 col-md-3 col-lg-2 control-label wide">Choose type :</label>
           <div class="col-sm-9 col-md-9 col-lg-10">
-            <select name="employer_type" class="form-control">
-              <option value="individual">Individual</option>
-              <option value="corporate">Corporate</option>
+            <select name="employer_type" class="form-control" disabled = "true">
+              <option value="individual"><?php print $obj->employee_type?></option>
             </select>
           </div>
         </div>
