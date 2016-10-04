@@ -16,6 +16,7 @@ var ProfilePic = React.createClass({
 			data: data,
 		})
 		.done(function( rs ) {
+          	console.log( rs );
 			self.setState({placeholder: rs.name});
 		});		
 	},
