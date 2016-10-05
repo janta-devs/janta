@@ -145,7 +145,7 @@ $obj = $user_info->row();
             <li class="dropdown">
               <a marked="1" tabindex="-1" href="#" class="dropdown-toggle avatar_width" data-toggle="dropdown" role="button" aria-expanded="false"><span class="avatar-holder">
 
-              <img src="<?php print base_url();?>assets/bower_components/bootstrap/dist/images/avatar-default.jpg" alt=""></span>
+              <img src="<?php print base_url().$obj->profile_photo; ?>" alt=""></span>
 
               <span class="avatar_info hidden-sm"><?php print $obj->first_name.' '.$obj->last_name; ?></span></a>
               <ul style="visibility: visible; animation-duration: 1500ms; animation-name: fadeInUp;" class="dropdown-menu user-dropdown animated fadeInUp wow avatar_drop neat_drop animated" data-wow-duration="1500ms" role="menu">

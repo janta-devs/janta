@@ -29,6 +29,7 @@ var ProfilePic = React.createClass({
 		.done(function( res ) {
 			var new_path = res.placeholder.replace(/http:\/\/localhost\/janta\/index.php\/Employee_registration/g, "");
 			new_path = "/janta"+new_path;
+          	console.log( new_path );
 			self.setState({placeholder: new_path});
 		});
 		
