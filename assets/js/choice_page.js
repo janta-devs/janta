@@ -242,7 +242,7 @@ var Individual = React.createClass({
 		.done(function( response ) {
 			if( response['status'] == 'registered'){
 				status.show().removeClass('warning').addClass('success').html("User is Registered");
-				location.href = "/janta/index.php/Employee_registration/profile";
+				ReactDOM.render(<Settings />, document.getElementById('choice'));
 			}else if( response['exists'] == true ){
 				status.show().removeClass('success').addClass('warning').html("User is already Registered!!");
 			}
