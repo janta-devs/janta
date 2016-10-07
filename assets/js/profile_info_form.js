@@ -22,24 +22,25 @@ var Settings = React.createClass({
 		var formData = $node.parent().serialize();
 		formData = formData+"&employee_type="+this.state.employee_type;
 		
-		if( this.state.user_info.hasOwnProperty('id_passport') && 
-			this.state.user_info.hasOwnProperty('email') &&
-			this.state.user_info.hasOwnProperty('phone1') &&
-			this.state.user_info.hasOwnProperty('phone2') &&
-			this.state.user_info.hasOwnProperty('address') &&
-			this.state.user_info.hasOwnProperty('education_level') &&
-			this.state.user_info.hasOwnProperty('certificate') &&
-			this.state.user_info.hasOwnProperty('city_town') &&
-			this.state.user_info.hasOwnProperty('estate_locality') &&
-			this.state.user_info.hasOwnProperty('school'))
-		{
-				this._submit( formData );
-		}
-		else{
-			var node = $(ReactDOM.findDOMNode(this));
-			var info_div = node.find('div.alert');
-			info_div.removeClass('alert-info').addClass('alert-danger').html('<center>Fill in all the required fields</center>').toggle(700);
-		}
+		if( this.state.user_info.hasOwnProperty('id_passport')
+			&& this.state.user_info.hasOwnProperty('email')
+			&& this.state.user_info.hasOwnProperty('phone1')
+			&& this.state.user_info.hasOwnProperty('phone2')
+			&& this.state.user_info.hasOwnProperty('address')
+			&& this.state.user_info.hasOwnProperty('education_level')
+			&& this.state.user_info.hasOwnProperty('certificate')
+			&& this.state.user_info.hasOwnProperty('city_town')
+			&& this.state.user_info.hasOwnProperty('estate_locality')
+			&& this.state.user_info.hasOwnProperty('school'))
+			{
+					this._submit( formData );
+			}
+			else
+			{
+				var node = $(ReactDOM.findDOMNode(this));
+				var info_div = node.find('div.alert');
+				info_div.removeClass('alert-info').addClass('alert-danger').html('<center>Fill in all the required fields</center>').toggle(700);
+			}
 	
 	},
 	_validate: function( event )
