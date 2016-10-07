@@ -1,4 +1,4 @@
-var data = {};
+var global_data = {};
 var status = $('div#status');
 var ProfilePic = React.createClass({
 	getInitialState: function(){
@@ -27,15 +27,16 @@ var ProfilePic = React.createClass({
 			dataType: 'json'
 		})
 		.done(function( res ) {
-			var new_path = res.placeholder.replace(/http:\/\/localhost\/janta\/index.php\/Employee_registration/g, "");
-			new_path = "/janta"+new_path;
-          	console.log( new_path );
-			self.setState({placeholder: new_path});
+			var new_path;
+			new_path = (res.placeholder == null || res.placeholder == undefined) ? self.state.placeholder : 
+			/janta/+res.placeholder.replace(/http:\/\/localhost\/janta\/index.php\/Employee_registration\/janta\//gi, "");
+			(new_path === self.state.placeholder) ? "" : self.setState({placeholder: new_path});
+			global_data['path'] = new_path;
 		});
 		
 	},
 	componentWillUpdate: function( nextProp, nextState ){
-		console.log(nextState);
+		nextState;
 	},
 	_upload: function( event ){
 		event.preventDefault();
@@ -55,94 +56,12 @@ var ProfilePic = React.createClass({
 		return (
 			<div>
 				<img src = {this.state.placeholder} width = "250" height = "230"/><br />
-				<input type = "file" name = "file"  onChange = {this._upload}/><br />
+				<div className = "UploadBtn"><input type = "file" name = "file"  onChange = {this._upload}/></div><br />
 			</div>
 		);
 	}
 });
 
-
-var Settings = React.createClass({
-	_back: function( event ){
-		event.preventDefault();
-		event.stopPropagation();
-		location.href = "";
-	},
-	_handleClick: function( event )
-	{
-		event.preventDefault();
-		event.stopPropagation();
-		var $node = $( event.target );
-		var formData = $node.parent().serialize();
-		formData = formData+"&employee_type="+this.props.employee_type;
-		console.log( formData );
-		this._submit( formData );
-	},
-	_submit: function( data )
-	{
-		$.ajax({
-			url: '/janta/index.php/Employee_registration/employeeData',
-			type: 'POST',
-			dataType: 'json',
-			data: data,
-		})
-		.done(function( response ) {
-			if( response['status'] == 'registered'){	
-				status.show('slideDown').removeClass('warning').addClass('success').html("User is Registered");
-				ReactDOM.render(<Settings />, document.getElementById('choice'));
-			}else if( response['exists'] == true ){
-				status.show('slideDown').removeClass('success').addClass('warning').html("User is already Registered!!");
-			}
-		})
-		.fail(function( response ) {
-			console.log( response );
-		})	
-	},
-	render: function() {
-		return (
-		<div className = "panel panel-default">
-		<div className = "panel-heading">
-			<h3>Registering as {this.state.header} user</h3>
-		</div>
-		<div className = "panel-body">
-		<form className = "form-inline" encType = "multipart-form/data">
-				ID/Passport Number: <br /><input type = "number" name = "id_passport" className = "form-control" placeholder = "ID/Passport Number"/><br />
-				Email: <br /><input type = "email" name = "email" className = "form-control" placeholder = "Email"/><br />
-				Phone number: <br /><input type = "number" name = "phone1" className = "form-control" placeholder = "Phone number 1"/><br />
-				Phone number: <br /><input type = "number" name = "phone2" className = "form-control" placeholder = "Phone number 2"/><br />
-				Address: <br /><input type = "text" name = "address" className = "form-control" placeholder = "Address"/><br />
-				Highest Education Level: <br />
-					<select className = "form-control" name = "education_level">
-						<option>Ph.D</option>
-						<option>Masters Degree</option>
-						<option>Undergraduate Degree</option>
-						<option>Diploma</option>
-						<option>High school</option>
-						<option>Primary School</option>
-					</select>
-				<br />
-				City/Town: <br />
-					<select className = "form-control" name = "city_town">
-						<option>Nairobi</option>
-						<option>Nakuru</option>
-						<option>Mombasa</option>
-						<option>Kisumu</option>
-						<option>Eldoret</option>
-						<option>Nyeri</option>
-					</select>
-				<br />
-				Estate Locality: <br /><input type = "email" name = "estate_locality" className = "form-control" placeholder = "Estate Locality"/><br />
-				Certificate: <br /><input type = "email" name = "certificate" className = "form-control" placeholder = "Certificate"/><br />
-				Institution Name: <br /><input type = "email" name = "school" className = "form-control" placeholder = "Institution Name"/><br /><br /><br />
-				<button type="button" className="btn btn-success" onClick={this._handleClick}>Submit</button>			
-				<button type="button" className="btn btn-primary pull-right" onClick = {this._back}>Back</button>
-		</form>
-		</div>
-		</div>
-
-		);
-	}
-})
 
 var Corporate = React.createClass({
 	getInitialState: function()
@@ -211,7 +130,10 @@ var Corporate = React.createClass({
 
 var Individual = React.createClass({
 	getInitialState: function(){
-		return { header: this.props.employee_type }
+		return { 
+			header: this.props.employee_type,
+			placeholder: '/janta/assets/pics/anony.jpg'
+		}
 	},
 	_back: function( event ){
 		event.preventDefault();
@@ -221,15 +143,9 @@ var Individual = React.createClass({
 	_handleClick: function( event ){
 		event.preventDefault();
 		event.stopPropagation();
-
-		console.log( event.target );
-	},
-	_handleClick: function( event ){
-		event.preventDefault();
-		event.stopPropagation();
 		var $node = $( event.target );
-		var formData = $node.parent().serialize();
-		formData = formData+"&employee_type="+this.props.employee_type;
+		var formData = $node.parent().parent().serialize();
+		formData = formData+"&employee_type="+this.props.employee_type+"&profile_photo="+global_data.path;
 		console.log( formData );
 		this._submit( formData );
 	},
@@ -254,30 +170,28 @@ var Individual = React.createClass({
 	},
 	render: function() {
 		return (
-	
-		<div className = "panel panel-default">
+		<div className = "panel panel-default col-sm-8 pic">
 		<div className = "panel-heading">
 			<h3>Registering as {this.state.header} user</h3>
 		</div>
 		<div className = "panel-body">
-			<form className = "form-inline">
-				<div className = "col-sm-6">
+			<div className = "col-sm-6">
 					<ProfilePic />
 				</div>
+			<form className = "form-inline">
 				<div className = "col-sm-6">
-				First Name: <br /><input type = "text" name = "first_name" className = "form-control" placeholder = "First Name"/><br />
-				Last Name: <br /><input type = "text" name = "last_name" className = "form-control" placeholder = "Last Name"/><br />
-				Surname Name: <br /><input type = "text" name = "surname" className = "form-control" placeholder = "Surname"/><br />
-				Gender: <br />
-					<select className = "form-control" name = "gender">
-						<option>Male</option>
-						<option>Female</option>
-					</select>
-				<br />
-				Date of birth: <br /><input type = "date" name = "dob" className = "form-control" placeholder = "Date of birth"/><br /><br />
+						First Name: <br /><input type = "text" name = "first_name" className = "form-control" placeholder = "First Name"/><br />
+						Last Name: <br /><input type = "text" name = "last_name" className = "form-control" placeholder = "Last Name"/><br />
+						Surname Name: <br /><input type = "text" name = "surname" className = "form-control" placeholder = "Surname"/><br />
+						Gender: <br />
+							<select className = "form-control" name = "gender">
+								<option>Male</option>
+								<option>Female</option>
+							</select>
+						<br />
+						Date of birth: <br /><input type = "date" name = "dob" className = "form-control" placeholder = "Date of birth"/><br /><br />		
+						<button type="button" className="btn btn-success pull-left" onClick={this._handleClick}>Submit</button>	
 				</div>
-				<button type="button" className="btn btn-success pull-right" onClick={this._handleClick}>Submit</button>			
-				<button type="button" className="btn btn-primary pull-left" onClick = {this._back}>Back</button>
 			</form>
 			</div>	
 			</div>
@@ -293,14 +207,13 @@ var ComboBox = React.createClass({
 		event.preventDefault();
 		event.stopPropagation();
 		var node = event.target, $node = $(node);
-		this.setState({ employee_type: $node.val() });
+		this.setState({ employee_type: $node.attr('name') });
 		if( $node.attr('name') == 'individual')
 		{
-			ReactDOM.render(<Individual employee_type = {$node.val()}/>, document.getElementById('choice'));
+			ReactDOM.render(<Individual employee_type = {$node.attr('name')}/>, document.getElementById('choice'));
 		}
 		else if( $node.attr('name')== 'corporate' ){
-			//console.log( ReactDOM.findDOMNode( this ) );
-			ReactDOM.render(<Corporate employee_type = {$node.val()} />, document.getElementById('choice'));
+			ReactDOM.render(<Corporate employee_type = {$node.attr('name')} />, document.getElementById('choice'));
 		}
 	},
 	render: function() {
@@ -312,7 +225,6 @@ var ComboBox = React.createClass({
 			<div className = "panel-body">
 			<button className="btn btn-primary pull-left" name = "corporate" onClick = {this._HandleChange}>Corporate</button>
 			<button className="btn btn-success pull-right" name = "individual" onClick = {this._HandleChange}>Individual</button>
-
 		</div>
 		</div>
 		);

@@ -9,6 +9,9 @@ class Employee_registration extends CI_Controller{
 	{
 		$this->load->view('choice_page');
 	}
+	public function step_four(){
+		$this->load->view('employee/profile_info_form');
+	}
 	public function employeeData()
 	{
 		$data = $this->input->post();

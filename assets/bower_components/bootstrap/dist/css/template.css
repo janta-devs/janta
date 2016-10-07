@@ -26,4 +26,48 @@ and open the template in the editor.
 .chat{
     cursor: pointer;
 }
+#choice, #form{
+    position: relative;
+    align-items: center;
+}
 
+#choice > .pic{
+    align-items: center;
+    left: 20%;
+}
+
+ #form{
+    left: 18%;
+ }
+
+/*input[type = 'file']{
+    visibility: hidden;
+}
+.UploadBtn{
+    background: 
+}*/
+
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  top: 2rem;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+.alert{
+    display: none;
+}

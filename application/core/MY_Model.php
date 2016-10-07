@@ -32,7 +32,7 @@ class MY_Model extends CI_Model
 	}
 	public function load( $id )
 	{
-		$query = $this->db->get_where($this::DB_TABLE, [$this::DB_PK_NAME => $id]);
+		$query = $this->db->get_where($this::DB_TABLE, [$this->{$this::DB_PK_NAME} => $id]);
 		$this->populate($query->row());
 	}
 	/*
@@ -79,7 +79,7 @@ class MY_Model extends CI_Model
 	}
 	public function check( $table, $data )
 	{
-		$this->db->get_where( $table , $data);
+		$this->db->get_where( $this::DB_TABLE , $data);
 		$num_of_affected_rows = $this->db->affected_rows();
 		return ($num_of_affected_rows === 1) ? TRUE : FALSE;
 	}
