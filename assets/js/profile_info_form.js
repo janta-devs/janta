@@ -22,7 +22,7 @@ var Settings = React.createClass({
 		var formData = $node.parent().serialize();
 		formData = formData+"&employee_type="+this.state.employee_type;
 		
-		if( this.state.user_info.hasOwnProperty('id_passport')
+		if( this.state.user_info.hasOwnProperty('id_passport')		// this checks whether the form was well filled 
 			&& this.state.user_info.hasOwnProperty('email')
 			&& this.state.user_info.hasOwnProperty('phone1')
 			&& this.state.user_info.hasOwnProperty('phone2')
@@ -116,67 +116,63 @@ var Settings = React.createClass({
 		<div className = "panel-body">
 		<div className = "alert alert-info"><center>Please fill in all the blanks</center></div>
 		<form className = "form-inline" encType = "multipart-form/data">
-
 				<div className = "col-sm-6">
-
-				<div className="inner-addon right-addon">
-				<i className = "glyphicon "></i>
-					ID/Passport Number: <br /><input type = "number" name = "id_passport" className = "form-control" placeholder = "ID/Passport Number" onBlur={this._validate}/>
+						<div className="inner-addon right-addon">
+						<i className = "glyphicon "></i>
+							ID/Passport Number: <br /><input type = "number" name = "id_passport" className = "form-control" placeholder = "ID/Passport Number" onBlur={this._validate}/>
+						</div>
+						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
+						Email: <br /><input type = "email" name = "email" className = "form-control" placeholder = "Email" onBlur={this._validate}/><br />
+						</div>
+						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
+						Phone number: <br /><input type = "number" name = "phone1" className = "form-control" placeholder = "Phone number 1" onBlur={this._validate}/><br />
+						</div>
+						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
+						Phone number: <br /><input type = "number" name = "phone2" className = "form-control" placeholder = "Phone number 2" onBlur={this._validate}/><br />
+						</div>
+						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
+						Address: <br /><input type = "text" name = "address" className = "form-control" placeholder = "Address" onBlur={this._validate}/><br />
+						</div>
+						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
+						Highest Education Level: <br />
+							<select className = "form-control" name = "education_level" onChange ={this._validate}>
+								<option>--SELECT--</option>
+								<option>Ph.D</option>
+								<option>Masters Degree</option>
+								<option>Undergraduate Degree</option>
+								<option>Diploma</option>
+								<option>High school</option>
+								<option>Primary School</option>
+							</select>
+						</div>
 				</div>
-				<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-				Email: <br /><input type = "email" name = "email" className = "form-control" placeholder = "Email" onBlur={this._validate}/><br />
-				</div>
-				<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-				Phone number: <br /><input type = "number" name = "phone1" className = "form-control" placeholder = "Phone number 1" onBlur={this._validate}/><br />
-				</div>
-				<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-				Phone number: <br /><input type = "number" name = "phone2" className = "form-control" placeholder = "Phone number 2" onBlur={this._validate}/><br />
-				</div>
-				<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-				Address: <br /><input type = "text" name = "address" className = "form-control" placeholder = "Address" onBlur={this._validate}/><br />
-				</div>
-				<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-				Highest Education Level: <br />
-					<select className = "form-control" name = "education_level" onChange ={this._validate}>
-						<option>--SELECT--</option>
-						<option>Ph.D</option>
-						<option>Masters Degree</option>
-						<option>Undergraduate Degree</option>
-						<option>Diploma</option>
-						<option>High school</option>
-						<option>Primary School</option>
-					</select>
-				</div>
-
-				</div>
-
 				<div className = "col-sm-6">
-				<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-				City/Town: <br />
-					<select className = "form-control" name = "city_town" type = "select" onChange ={this._validate}>
-						<option>--SELECT--</option>
-						<option>Nairobi</option>
-						<option>Nakuru</option>
-						<option>Mombasa</option>
-						<option>Kisumu</option>
-						<option>Eldoret</option>
-						<option>Nyeri</option>
-					</select>
+						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
+						City/Town: <br />
+							<select className = "form-control" name = "city_town" type = "select" onChange ={this._validate}>
+								<option>--SELECT--</option>
+								<option>Nairobi</option>
+								<option>Nakuru</option>
+								<option>Mombasa</option>
+								<option>Kisumu</option>
+								<option>Eldoret</option>
+								<option>Nyeri</option>
+							</select>
+						</div>
+						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
+						Estate Locality: <br /><input type = "text" name = "estate_locality" className = "form-control" placeholder = "Estate Locality" onBlur={this._validate}/><br />
+						</div>
+						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
+						Certificate: <br /><input type = "text" name = "certificate" className = "form-control" placeholder = "Certificate" onBlur={this._validate}/><br />
+						</div>
+						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
+						Institution Name: <br /><input type = "text" name = "school" className = "form-control" placeholder = "Institution Name" onBlur={this._validate}/><br /><br /><br />
+						</div>
+						</div>
+						<button type="button" className="btn btn-success" onClick={this._handleClick}>Submit</button>
+				</form>
 				</div>
-				<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-				Estate Locality: <br /><input type = "text" name = "estate_locality" className = "form-control" placeholder = "Estate Locality" onBlur={this._validate}/><br />
-				</div>
-				<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-				Certificate: <br /><input type = "text" name = "certificate" className = "form-control" placeholder = "Certificate" onBlur={this._validate}/><br />
-				</div>
-				<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-				Institution Name: <br /><input type = "text" name = "school" className = "form-control" placeholder = "Institution Name" onBlur={this._validate}/><br /><br /><br />
-				</div>
-				</div>
-				<button type="button" className="btn btn-success" onClick={this._handleClick}>Submit</button>
-		</form>
-		</div>
-		</div>
+			</div>
 
 		);
 	}
