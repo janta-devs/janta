@@ -5,7 +5,7 @@ class Home extends CI_Controller{
 	public $roles;
 	function __construct(){
 		parent::__construct();
-		$this->load->model('User_login', 'user_login', TRUE);
+		$this->load->model('Login', 'login', TRUE);
 		$this->form_validation->set_error_delimiters('<div class="error">', '<div>');
 		$this->status = $this->config->item('status');
 		$this->roles  = $this->config->item('role');
@@ -29,13 +29,13 @@ class Home extends CI_Controller{
 		if($this->form_validation->run() == FALSE){
 			$this->load->view('employee/home');
 		} else {
-			if($this->user_login->isDuplicate($this->input->post('email_add'))){
+			if($this->login->isDuplicate($this->input->post('email_add'))){
 				$this->session->set_flashdata('flash_message', 'User email already exists');
 				redirect(site_url().'/home/login');
 			}else{
 				$clean = $this->security->xss_clean($this->input->post(NULL, TRUE));
-				$id = $this->user_login->insertUser($clean);
-				$token = $this->user_login->insertToken($id);
+				$id = $this->login->insertUser($clean);
+				$token = $this->login->insertToken($id);
 
 				$qstring = $this->base64url_encode($token);
 
@@ -59,7 +59,7 @@ class Home extends CI_Controller{
 		$token = base64_decode($this->uri->segment(4));
 		$cleanToken = $this->security->xss_clean($token);
 
-		$user_info = $this->user_login->isTokenValid($cleanToken); //either false or an array();
+		$user_info = $this->login->isTokenValid($cleanToken); //either false or an array();
 
 		if(!$user_info){
 			$this->session->set_flashdata('flash_message', 'Token is invalid or expired');
@@ -86,7 +86,7 @@ class Home extends CI_Controller{
 			$hashed = $this->password->create_hash($cleanPost['password']);
 			$cleanPost['password'] = $hashed;
 			unset($cleanPost['passconf']);
-			$userInfo = $this->user_login->updateUserInfo($cleanPost);
+			$userInfo = $this->login->updateUserInfo($cleanPost);
 
 			if(!$userInfo){
 				$this->session->set_flashdata('flash messgae', 'There was a problem updating your record');
@@ -112,7 +112,7 @@ class Home extends CI_Controller{
 			$post = $this->input->post();
 			$clean = $this->security->xss_clean($post);
 
-			$userInfo = $this->user_login->checkLogin($clean);
+			$userInfo = $this->login->checkLogin($clean);
 
 			if(!$userInfo){
 				$this->session->set_flashdata('flash_message', 'The login was unsuccessful');
@@ -139,7 +139,7 @@ class Home extends CI_Controller{
 		} else {
 			$email = $this->input->post('email');
 			$clean = $this->security->xss_clean($email);
-			$userInfo = $this->user_login->getUserInfoByEmail($clean);
+			$userInfo = $this->login->getUserInfoByEmail($clean);
 
 			if(!$userInfo){
 				$this->session->set_flashdata('flash_message', 'We can\'t find your email address');
@@ -152,7 +152,7 @@ class Home extends CI_Controller{
 				redirect(site_url().'/home/login');
 			}
 			//build token
-			$token = $this->user_login->insertToken($userInfo->login_id);
+			$token = $this->login->insertToken($userInfo->login_id);
 			$qstring = $this->base64url_encode($token);
 			$url = site_url() . '/home/reset_password/token/' . $qstring;
 			$link = '<a href="' . $url . '">' . $url . '</a>';
@@ -172,7 +172,7 @@ class Home extends CI_Controller{
 
 		$cleanToken = $this->security->xss_clean($token);
 
-		$user_info = $this->user_login->isTokenValid($cleanToken); //either false or array();
+		$user_info = $this->login->isTokenValid($cleanToken); //either false or array();
 
 		if($user_info){
 			$this->session->set_flashdata('flash_message', 'Token is invalid of expired');
@@ -198,7 +198,7 @@ class Home extends CI_Controller{
 			$cleanPost['password'] = $hashed;
 			$cleanPost['login_id'] = $user_info->login_id;
 			unset($cleanPost['passconf']);
-			if(!$this->user_login->updatePassword($cleanPost)){
+			if(!$this->login->updatePassword($cleanPost)){
 				$this->session->set_flashdata('flash_message', 'There was a problem changing your password');
 			} else {
 				$this->session->set_flashdata('flash_message', 'Your password has been successfully changed. You may now login');
