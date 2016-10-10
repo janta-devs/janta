@@ -31,7 +31,59 @@ and open the template in the editor.
     border:1px solid #da3232;
     font-weight:bold;
 }
+.flash-message{
+    padding:15px 0;
+    border: 1px solid #E9E2C0;
+    border-radius: 4px;
+    margin-bottom:25px;
+}
+.form-choice {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-choice h4{
+    background-color: #ffffff;
+    text-align: center;
+}
+.col-md-4 h5 {
+    line-height: 20px;
+    margin-top:12px;
+    text-align: center;
+    background-color: #f9991c;
+    border: 1px solid;
+    border-color: #489ee7;
 
+}
+.col-md-4 h5 span{
+   color: #006dcc;
+}
+.col-md-4 small{
+    text-align: center;
+}
+.form-choice h5 {
+    line-height: 20px;
+    margin-top:12px;
+    text-align: center;
+}
+.form-choice .btn-primary-employer {
+    background-color: #489ee7;
+    border-color: #489ee7;
+    /*border-color: #4cae4c;*/
+    color: #ffffff;
+}
+.form-choice .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-choice .form-control:focus {
+  z-index: 2;
+}
 .warning_mesage
 {
     text-align:center;

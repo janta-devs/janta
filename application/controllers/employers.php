@@ -3,7 +3,7 @@ class Employers extends CI_Controller
 {
 	function __construct()
 	{
-		parent::__construct('employers');
+		parent::__construct();
 	}
 	function index()
 	{
@@ -14,7 +14,19 @@ class Employers extends CI_Controller
 	{
 		$this->load->view('employer/registration');
 	}
-	/*Returns employers table data rows; this will be invoked by AJAX*/
+	public function saveIndividual()
+	{
+		$createIndividual = $this->Employer->createIndividualEmployer();
+		if($createIndividual === true){
+			echo "Successfully added";
+		} else {
+			echo "Error while adding information";
+		}
+
+	}
+	//echo json_encode($createIndividual); 
+	/*
+	//Returns employers table data rows; this will be invoked by AJAX
 	function search()
 	{
 		$search=$this->input->post('search');
@@ -27,7 +39,7 @@ class Employers extends CI_Controller
 		$suggestions = $this->Employer->get_search_suggestions($this->input->post('q'), $this->input->post('limit'));
 		echo implode("\n", $suggestions);
 	}
-	/*this funcition intended to load the employer profile edit form*/
+	//this funcition intended to load the employer profile edit form
 	function profile_edit($employer_id=-1)
 	{
 		$data['user_info']=$this->Employer->get_info($employer_id);
@@ -48,9 +60,11 @@ class Employers extends CI_Controller
 			'address2'=>$this->input->post('address2'),
 			'country'=>$this->input->post('country'),
 			'county'=>$this->input->post('county'),
-			'city'=>$this->input->post('city'),
-			'suburb'=>$this->input->post('suburb'),
-			'image_id'=>$this->input->post('image_id')
+			'city_town'=>$this->input->post('city'),
+			'estate_locality'=>$this->input->post('suburb'),
+			'image_id'=>$this->input->post('image_id'),
+			'dob' => $this->input->post('image_id'),
+			'phone2' => $this->input->post('image_id'),
 			);
 		if ($this->Employer->save($user_data,$employer_data,$employer_id))
 		{
@@ -61,6 +75,6 @@ class Employers extends CI_Controller
 					$employer_data['company_name'], 'login_id'=>$employer_data['login_id']));
 			}
 		}
-	}
+	}*/
 }
 ?>
