@@ -54,37 +54,37 @@ var Settings = React.createClass({
 		
 		if($type == 'text' && typeof($node.val()) == 'string' && $node.val() !== "")
 		{
-			$node.parent().children('i').removeClass('glyphicon-warning-sign').addClass('glyphicon-ok');
+			$node.parent().children('i').removeClass('glyphicon-warning-sign');
 			form_data[$node.attr('name')] = $node.val();
 			this.setState({user_info: form_data});
 		}
 		else if( $type == 'email' && typeof($node.val()) == 'string' && re.test($node.val()) && $node.val() !== "")
 		{
-			$node.parent().children('i').removeClass('glyphicon-warning-sign').addClass('glyphicon-ok');
+			$node.parent().children('i').removeClass('glyphicon-warning-sign');
 			form_data[$node.attr('name')] = $node.val();
 			this.setState({user_info: form_data});
 		}
 		else if( $type == 'number' && isNaN( $node.val() ) == false && $node.val() !== "")
 		{
-			$node.parent().children('i').removeClass('glyphicon-warning-sign').addClass('glyphicon-ok');
+			$node.parent().children('i').removeClass('glyphicon-warning-sign');
 			form_data[$node.attr('name')] = $node.val();
 			this.setState({user_info: form_data});
 		}
 		else if( $type == 'password' && typeof($node.val()) == 'string' && $node.val() !== "")
 		{
-			$node.parent().children('i').removeClass('glyphicon-warning-sign').addClass('glyphicon-ok');
+			$node.parent().children('i').removeClass('glyphicon-warning-sign');
 			form_data[$node.attr('name')] = $node.val();
 			this.setState({user_info: form_data});
 		}
 		else if( event.type === "change" && $node.val() !== '--SELECT--' )
 		{
-			$node.parent().children('i').removeClass('glyphicon-warning-sign').addClass('glyphicon-ok');
+			$node.parent().children('i').removeClass('glyphicon-warning-sign');
 			form_data[$node.attr('name')] = $node.val();
 			this.setState({user_info: form_data});
 		}
 		else
 		{
-			$node.parent().children('i').removeClass('glyphicon-ok').addClass('glyphicon-warning-sign');
+			$node.parent().children('i').addClass('glyphicon-warning-sign');
 		}
 	},
 	_submit: function( data )
