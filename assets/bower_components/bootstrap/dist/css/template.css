@@ -103,4 +103,55 @@ and open the template in the editor.
 .chat{
     cursor: pointer;
 }
+<<<<<<< HEAD
 >>>>>>> 869bf7ff500e45a45d335101635ea33ea1b56f85
+=======
+#choice, #form{
+    position: relative;
+    align-items: center;
+}
+
+#choice > .pic{
+    align-items: center;
+    left: 20%;
+}
+
+ #form{
+    left: 18%;
+ }
+
+/*input[type = 'file']{
+    visibility: hidden;
+}
+.UploadBtn{
+    background: 
+}*/
+
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  top: 2rem;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+.alert{
+    display: none;
+}
+.alert{
+    
+}
+>>>>>>> 8b424a56a90c60c6fa6abe8398da9e51f27ef332

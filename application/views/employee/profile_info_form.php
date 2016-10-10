@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Register</title>
+  <title>Personal Details</title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/template.css">
@@ -29,8 +29,7 @@
 
 <!--container -->
 <div class="container">
-   <!-- <div id="status" class="col-md-12 alert alert-warning" style="position: relative; padding-top: 4.5%;"><center>Please fill in the required fields</center></div>  -->
-  <div id="choice" style=" padding-top: 10%"></div> 
+  <div id="form" style=" padding-top:10%"></div> 
 </div>
 <!-- end of container -->
 </body>
@@ -40,5 +39,5 @@
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-dom.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-with-addons.min.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type = "text/babel" src = "<?php print base_url();?>assets/js/choice_page.js"></script>
+<script type = "text/babel" src = "<?php print base_url();?>assets/js/profile_info_form.js"></script>
 </html>

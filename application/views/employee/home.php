@@ -150,3 +150,6 @@
 <script type = "text/babel" src = "<?php print base_url();?>assets/js/registration.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/js/login.js"></script>-->
 </html>
+
+     
+ 

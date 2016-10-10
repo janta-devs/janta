@@ -20,13 +20,9 @@ class MY_Model extends CI_Model
 	}
 	public function update($initial_data, $new_data)
 	{
-		if( $this->check( $this::DB_TABLE, $initial_data ) == TRUE )
-		{
-			$res = $this->db->get_where( $this::DB_TABLE, $initial_data);
-			$this->{$this::DB_TABLE_PK} = $res->row()->login_id;
-			return ($this->db->update($this::DB_TABLE, $new_data, [$this::DB_PK_NAME => $this::DB_TABLE_PK]) == True )?
-			print json_encode("updated") : print json_encode('update failed');
-		}
+		$this->db->where('login_id', $initial_data['login_id']);
+		return ( ($this->db->update($this::DB_TABLE, $new_data) === True ) ) ? true: false;
+		
 	}
 	public function populate( $row ){
 		foreach ($row as $key => $value)
@@ -36,7 +32,7 @@ class MY_Model extends CI_Model
 	}
 	public function load( $id )
 	{
-		$query = $this->db->get_where($this::DB_TABLE, [$this::DB_PK_NAME => $id]);
+		$query = $this->db->get_where($this::DB_TABLE, [$this->{$this::DB_PK_NAME} => $id]);
 		$this->populate($query->row());
 	}
 	/*
@@ -83,7 +79,7 @@ class MY_Model extends CI_Model
 	}
 	public function check( $table, $data )
 	{
-		$this->db->get_where( $table , $data);
+		$this->db->get_where( $this::DB_TABLE , $data);
 		$num_of_affected_rows = $this->db->affected_rows();
 		return ($num_of_affected_rows === 1) ? TRUE : FALSE;
 	}
