@@ -109,13 +109,9 @@ var Settings = React.createClass({
 	},
 	render: function() {
 		return (
-		<div className = "panel panel-default col-sm-8">
-		<div className = "panel-heading">
-			<h3>Registering</h3>
-		</div>
-		<div className = "panel-body">
+		<div className = "formData">
 		<div className = "alert alert-info"><center>Please fill in all the blanks</center></div>
-		<form className = "form-inline" encType = "multipart-form/data">
+		<form className = "form-inline profile_form" encType = "multipart-form/data">
 				<div className = "col-sm-6">
 						<div className="inner-addon right-addon">
 						<i className = "glyphicon "></i>
@@ -171,7 +167,6 @@ var Settings = React.createClass({
 						</div>
 						<button type="button" className="btn btn-success" onClick={this._handleClick}>Submit</button>
 				</form>
-				</div>
 			</div>
 
 		);

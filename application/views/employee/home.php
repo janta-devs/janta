@@ -4,14 +4,6 @@
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/template.css">
-	<!-- <link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/jumbotron.css"> -->
-  <!--<script type="text/javascript">
-  $(document).ready(function()
-  {
-    $("#navbar input:first").focus();
-  });
-  </script>-->
- 
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -110,45 +102,11 @@
       </div>
     </div>
      
- <!--Creating the modal for registration-->
- <div class="modal" id = "register">
- 	<div class="modal-dialog">
- 		<div class="modal-content">
- 			<div class="modal-header">
-      <h4>Register</h4>
-      </div>
-
- 			<div class="modal-body">
-      <div class="alert alert-success" style="display: none;">Please fill all the fields</div>
- 				<form class="form-inline" id="registration">
- 					Username<br /><input type="text" name="username" placeholder="Username"  class="form-control"/><br />
- 					Password<br /><input type="password" name="password" placeholder="Password"  class="form-control"/><br />
- 					Re-enter password<br /><input type="password" name="re_password" placeholder="Reenter Password"  class="form-control"/><br />
-          Email:<br /><input type="email" name="email" placeholder="Email"  class="form-control"/><br/> 
- 			</div>
- 			<div class="modal-footer">
- 				<button class="btn btn-primary pull-right" id="register">Submit</button>
-        <button class="btn btn-warning pull-left" data-dismiss = "modal">Close</button>
- 				</form>
- 			</div>
-
- 		</div>
- 	</div>
- </div>
- <!--End of Modal-->
 
 </div>
 
 </body>
-<!--<script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/jquery/dist/jquery.min.js"></script>
 
-<script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/babel-core.js"></script>
-<script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react.min.js"></script>
-<script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-dom.min.js"></script>
-<script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-with-addons.min.js"></script>
-<script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type = "text/babel" src = "<?php print base_url();?>assets/js/registration.js"></script>
-<script type="text/javascript" src = "<?php print base_url();?>assets/js/login.js"></script>-->
 </html>
 
      

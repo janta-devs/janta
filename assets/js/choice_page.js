@@ -170,30 +170,25 @@ var Individual = React.createClass({
 	},
 	render: function() {
 		return (
-		<div className = "panel panel-default col-sm-8 pic">
-		<div className = "panel-heading">
-			<h3>Registering as {this.state.header} user</h3>
-		</div>
-		<div className = "panel-body">
-			<div className = "col-sm-6">
-					<ProfilePic />
-				</div>
-			<form className = "form-inline">
-				<div className = "col-sm-6">
-						First Name: <br /><input type = "text" name = "first_name" className = "form-control" placeholder = "First Name"/><br />
-						Last Name: <br /><input type = "text" name = "last_name" className = "form-control" placeholder = "Last Name"/><br />
-						Surname Name: <br /><input type = "text" name = "surname" className = "form-control" placeholder = "Surname"/><br />
-						Gender: <br />
-							<select className = "form-control" name = "gender">
-								<option>Male</option>
-								<option>Female</option>
-							</select>
-						<br />
-						Date of birth: <br /><input type = "date" name = "dob" className = "form-control" placeholder = "Date of birth"/><br /><br />		
-						<button type="button" className="btn btn-success pull-left" onClick={this._handleClick}>Submit</button>	
-				</div>
-			</form>
-			</div>	
+		<div className = "profile_form">
+					<div className = "col-lg-6">
+							<ProfilePic />
+						</div>
+					<form className = "form-inline">
+						<div className = "col-lg-6">
+								First Name: <br /><input type = "text" name = "first_name" className = "form-control" placeholder = "First Name"/><br />
+								Last Name: <br /><input type = "text" name = "last_name" className = "form-control" placeholder = "Last Name"/><br />
+								Surname Name: <br /><input type = "text" name = "surname" className = "form-control" placeholder = "Surname"/><br />
+								Gender: <br />
+									<select className = "form-control" name = "gender">
+										<option>Male</option>
+										<option>Female</option>
+									</select>
+								<br />
+								Date of birth: <br /><input type = "date" name = "dob" className = "form-control" placeholder = "Date of birth"/><br /><br />		
+								<button type="button" className="btn btn-success pull-left" onClick={this._handleClick}>Submit</button>	
+						</div>
+					</form>
 			</div>
 	
 		);
