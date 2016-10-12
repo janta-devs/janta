@@ -15,11 +15,14 @@ $(document).ready(function(){
 		$(this).find("option:selected").each(function(){
 			
 			if($(this).attr("value")=="individual"){
-				$("#employer_form_corporate").hide();
-				$("#step_2").hide();
-				$("#employer_form_individual").show();
+				$("#employer_corporate").hide();
+				$("#employerstep_2").hide();
+				/*console.log();
+				alert("You are continuing as an Individual Employer");*/
+				$("#employer_individual").show();
 			}
 			else if ($(this).attr("value")=="corporate"){
+				alert("You are continuing as a Corporate Employer");
 				$("#employer_form_individual").hide();
 				$("#employerstep_2").hide();
 				$("#employer_corporate").show();
@@ -32,6 +35,11 @@ $(document).ready(function(){
 		});
 
 	}).change();
+	//handles select function of the dropdown box.
+	$('#employer_type').selectpicker({
+		style: 'btn-info',
+		size: 5
+	})
 	//handles validation and submit of the employer_registration form
 	$('#employer_form_corporate')
 	.bootstrapValidator({
@@ -298,8 +306,10 @@ $(document).ready(function(){
 		}	
 			
 	});
-
 });
+
+
+	
 //for handling the various steps in the registratioin process
 $(document).ready(function () {
     //Initialize tooltips

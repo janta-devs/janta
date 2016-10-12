@@ -47,6 +47,16 @@
         return $token . $login_id;
         
     }
+    public function insertEmployer($login_id)
+    {
+        $string = array(
+            'login_id' => $login_id,
+            'phone1' => $post['phone']
+            );
+        $query = $this->db->insert_string('employer', $string);
+        $this->db->query($query);
+        return $this->db->insert_id();
+    }
     
     public function isTokenValid($token)
     {
@@ -80,6 +90,7 @@
     
     public function getUserInfo($login_id)
     {
+       // $q = $this->db->join('employer','user_login.login_id=employer.login_id');
         $q = $this->db->get_where('user_login', array('login_id' => $login_id), 1);  
         if($this->db->affected_rows() > 0){
             $row = $q->row();

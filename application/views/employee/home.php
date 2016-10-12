@@ -4,6 +4,7 @@
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/template.css">
+  <link rel="stylesheet" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/intlTelInput.css">
 	<!-- <link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/jumbotron.css"> -->
   <!--<script type="text/javascript">
   $(document).ready(function()
@@ -78,13 +79,12 @@
         </div>
         </nav>
 <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-    <div class="homep"></div>
-      <div class="container">
-        <h1>Sign Up!</h1>
+  <div class="container-fluid">
+  <div class="row" id="form" style="margin-top: 90px;">
+  <div class="col-md-4 col-md-offset-1" >
+    <h1>Sign Up!</h1>
         <p class='jumbotron-text'>Join the #1 global workplace.</p>
-       <!-- <p><a class="btn btn-primary btn-lg" href="" role="button" id = "signup" data-toggle = "modal" data-target = "#register">Sign Up now &raquo;</a></p>-->
-       <div class="col-md-4">    
+       <!-- <p><a class="btn btn-primary btn-lg" href="" role="button" id = "signup" data-toggle = "modal" data-target = "#register">Sign Up now &raquo;</a></p>-->   
 <?php 
     $fattr = array('class' => 'form-signin');
     echo form_open('/home/register/', $fattr); ?>
@@ -107,11 +107,15 @@
     <?php echo form_submit(array('value'=>'Sign up', 'class'=>'btn btn-lg btn-primary btn-block')); ?>
     <?php echo form_close(); ?>
     </div>
-      </div>
+    <div class="col-md-4 col-md-offset-1">
+      <img src="<?php print base_url();?>assets/bower_components/bootstrap/dist/images/sl1.jpg">
+    </div>
+  </div>
+        
     </div>
      
  <!--Creating the modal for registration-->
- <div class="modal" id = "register">
+ <!--<div class="modal" id = "register">
  	<div class="modal-dialog">
  		<div class="modal-content">
  			<div class="modal-header">
@@ -119,7 +123,7 @@
       </div>
 
  			<div class="modal-body">
-      <div class="alert alert-success" style="display: none;">Please fill all the fields</div>
+     <!--<div class="alert alert-success" style="display: none;">Please fill all the fields</div>
  				<form class="form-inline" id="registration">
  					Username<br /><input type="text" name="username" placeholder="Username"  class="form-control"/><br />
  					Password<br /><input type="password" name="password" placeholder="Password"  class="form-control"/><br />
@@ -130,16 +134,18 @@
  				<button class="btn btn-primary pull-right" id="register">Submit</button>
         <button class="btn btn-warning pull-left" data-dismiss = "modal">Close</button>
  				</form>
- 			</div>
+ 			</div>-->
 
- 		</div>
+ 	<!--</div>
  	</div>
- </div>
+ </div>-->
  <!--End of Modal-->
-
-</div>
-
 </body>
+<script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/jquery/dist/jquery-3.1.1.min.js"></script>
+<script src="<?php print base_url();?>assets/bower_components/bootstrap/dist/js/intlTelInput.js"></script>
+<script>
+  $("#phone").intlTelInput();
+</script>
 <!--<script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/jquery/dist/jquery.min.js"></script>
 
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/babel-core.js"></script>

@@ -26,6 +26,7 @@ class Home extends CI_Controller{
 		$this->form_validation->set_rules('email_add', 'Email Address', 'required|valid_email');
 		$this->form_validation->set_rules('industry', 'Industry', 'required');
 		$this->form_validation->set_rules('specialization', 'Specialization', 'required');
+		$this->form_validation->set_rules('phone', 'phone', 'required');
 		if($this->form_validation->run() == FALSE){
 			$this->load->view('employee/home');
 		} else {
@@ -66,8 +67,8 @@ class Home extends CI_Controller{
 			redirect(site_url().'/home/login');
 		}
 		$data = array(
-			//'industry'=>$user_info->industry,
-			//'specialization'=>$user_info->specialization,
+			'industry'=>$user_info->industry,
+			'specialization'=>$user_info->specialization,
 			'email'=>$user_info->email,
 			'login_id'=>$user_info->login_id,
 			'token'=>$this->base64url_encode($token)
@@ -244,7 +245,6 @@ class Home extends CI_Controller{
 		$data = ['username'=>'theantonymars@gmail.com'];
 		$user_login->delete($data);
 	}*/
-
 }
 
 ?>
