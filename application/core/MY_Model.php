@@ -79,7 +79,7 @@ class MY_Model extends CI_Model
 	}
 	public function check( $table, $data )
 	{
-		$this->db->get_where( $this::DB_TABLE , $data);
+		$this->db->get_where( $this::DB_TABLE , $data, 1);
 		$num_of_affected_rows = $this->db->affected_rows();
 		return ($num_of_affected_rows === 1) ? TRUE : FALSE;
 	}

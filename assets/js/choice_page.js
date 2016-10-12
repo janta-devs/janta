@@ -107,23 +107,20 @@ var Corporate = React.createClass({
 	{
 		console.log( this.props );
 		return (
-		<div className = "panel panel-default">
-		<div className = "panel-heading">
-			<h3>Registering as {this.state.header} user</h3>
-		</div>
+		<fieldset>
 		<div className = "panel-body">
 			<form className = "form-inline">
-				Country: <br /><input type = "text" name = "country" className = "form-control" placeholder = "Country"/><br />
-				Locality: <br /><input type = "text" name = "estate_locality" className = "form-control" placeholder = "Locality"/><br />
-				Company Name: <br /><input type = "text" name = "company_name" className = "form-control" placeholder = "Company Name"/><br />
-				Phone Number 1: <br /><input type = "number" name = "phone1" className = "form-control" placeholder = "Phone number 1"/><br />
-				Phone Number 2: <br /><input type = "number" name = "phone2" className = "form-control" placeholder = "Phone number 2"/><br />
-				Email: <br /><input type = "email" name = "email" className = "form-control" placeholder = "Email"/><br /><br />
+				Country: <br /><input type = "text" name = "country" className = "mdl-textfield__input" placeholder = "Country"/><br />
+				Locality: <br /><input type = "text" name = "estate_locality" className = "mdl-textfield__input" placeholder = "Locality"/><br />
+				Company Name: <br /><input type = "text" name = "company_name" className = "mdl-textfield__input" placeholder = "Company Name"/><br />
+				Phone Number 1: <br /><input type = "number" name = "phone1" className = "mdl-textfield__input" placeholder = "Phone number 1"/><br />
+				Phone Number 2: <br /><input type = "number" name = "phone2" className = "mdl-textfield__input" placeholder = "Phone number 2"/><br />
+				Email: <br /><input type = "email" name = "email" className = "mdl-textfield__input" placeholder = "Email"/><br /><br />
 				<button type="button" className="btn btn-success" onClick={this._handleClick}>Submit</button>			
 				<button type="button" className="btn btn-primary pull-right" onClick = {this._back}>Back</button>
 			</form>
 		</div>
-		</div>
+		</fieldset>
 		);
 	}
 });
@@ -170,30 +167,25 @@ var Individual = React.createClass({
 	},
 	render: function() {
 		return (
-		<div className = "panel panel-default col-sm-8 pic">
-		<div className = "panel-heading">
-			<h3>Registering as {this.state.header} user</h3>
-		</div>
-		<div className = "panel-body">
-			<div className = "col-sm-6">
-					<ProfilePic />
-				</div>
-			<form className = "form-inline">
-				<div className = "col-sm-6">
-						First Name: <br /><input type = "text" name = "first_name" className = "form-control" placeholder = "First Name"/><br />
-						Last Name: <br /><input type = "text" name = "last_name" className = "form-control" placeholder = "Last Name"/><br />
-						Surname Name: <br /><input type = "text" name = "surname" className = "form-control" placeholder = "Surname"/><br />
-						Gender: <br />
-							<select className = "form-control" name = "gender">
-								<option>Male</option>
-								<option>Female</option>
-							</select>
-						<br />
-						Date of birth: <br /><input type = "date" name = "dob" className = "form-control" placeholder = "Date of birth"/><br /><br />		
-						<button type="button" className="btn btn-success pull-left" onClick={this._handleClick}>Submit</button>	
-				</div>
-			</form>
-			</div>	
+		<div className = "profile_form">
+					<div className = "col-lg-6">
+							<ProfilePic />
+						</div>
+					<form className = "form-inline">
+						<div className = "col-lg-6">
+								First Name: <br /><input type = "text" name = "first_name" className = "mdl-textfield__input" placeholder = "First Name"/><br />
+								Last Name: <br /><input type = "text" name = "last_name" className = "mdl-textfield__input" placeholder = "Last Name"/><br />
+								Surname Name: <br /><input type = "text" name = "surname" className = "mdl-textfield__input" placeholder = "Surname"/><br />
+								Gender: <br />
+									<select className = "form-control" name = "gender">
+										<option>Male</option>
+										<option>Female</option>
+									</select>
+								<br />
+								Date of birth: <br /><input type = "date" name = "dob" className = "mdl-textfield__input" placeholder = "Date of birth"/><br /><br />		
+								<button type="button" className="btn btn-success pull-left" onClick={this._handleClick}>Submit</button>	
+						</div>
+					</form>
 			</div>
 	
 		);
@@ -218,15 +210,12 @@ var ComboBox = React.createClass({
 	},
 	render: function() {
 		return (	
-		<div className = "panel panel-default">
-		<div className = "panel-heading">
-			<h3>What kind of employee would you like to register as?</h3>
-		</div>
+		<fieldset>
 			<div className = "panel-body">
-			<button className="btn btn-primary pull-left" name = "corporate" onClick = {this._HandleChange}>Corporate</button>
-			<button className="btn btn-success pull-right" name = "individual" onClick = {this._HandleChange}>Individual</button>
-		</div>
-		</div>
+				<button className="btn btn-primary pull-left" name = "corporate" onClick = {this._HandleChange}>Corporate</button>
+				<button className="btn btn-success pull-right" name = "individual" onClick = {this._HandleChange}>Individual</button>
+			</div>
+		</fieldset>
 		);
 	}
 });

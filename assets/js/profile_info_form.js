@@ -54,37 +54,37 @@ var Settings = React.createClass({
 		
 		if($type == 'text' && typeof($node.val()) == 'string' && $node.val() !== "")
 		{
-			$node.parent().children('i').removeClass('glyphicon-warning-sign').addClass('glyphicon-ok');
+			$node.parent().children('i').removeClass('glyphicon-warning-sign');
 			form_data[$node.attr('name')] = $node.val();
 			this.setState({user_info: form_data});
 		}
 		else if( $type == 'email' && typeof($node.val()) == 'string' && re.test($node.val()) && $node.val() !== "")
 		{
-			$node.parent().children('i').removeClass('glyphicon-warning-sign').addClass('glyphicon-ok');
+			$node.parent().children('i').removeClass('glyphicon-warning-sign');
 			form_data[$node.attr('name')] = $node.val();
 			this.setState({user_info: form_data});
 		}
 		else if( $type == 'number' && isNaN( $node.val() ) == false && $node.val() !== "")
 		{
-			$node.parent().children('i').removeClass('glyphicon-warning-sign').addClass('glyphicon-ok');
+			$node.parent().children('i').removeClass('glyphicon-warning-sign');
 			form_data[$node.attr('name')] = $node.val();
 			this.setState({user_info: form_data});
 		}
 		else if( $type == 'password' && typeof($node.val()) == 'string' && $node.val() !== "")
 		{
-			$node.parent().children('i').removeClass('glyphicon-warning-sign').addClass('glyphicon-ok');
+			$node.parent().children('i').removeClass('glyphicon-warning-sign');
 			form_data[$node.attr('name')] = $node.val();
 			this.setState({user_info: form_data});
 		}
 		else if( event.type === "change" && $node.val() !== '--SELECT--' )
 		{
-			$node.parent().children('i').removeClass('glyphicon-warning-sign').addClass('glyphicon-ok');
+			$node.parent().children('i').removeClass('glyphicon-warning-sign');
 			form_data[$node.attr('name')] = $node.val();
 			this.setState({user_info: form_data});
 		}
 		else
 		{
-			$node.parent().children('i').removeClass('glyphicon-ok').addClass('glyphicon-warning-sign');
+			$node.parent().children('i').addClass('glyphicon-warning-sign');
 		}
 	},
 	_submit: function( data )
@@ -109,29 +109,25 @@ var Settings = React.createClass({
 	},
 	render: function() {
 		return (
-		<div className = "panel panel-default col-sm-8">
-		<div className = "panel-heading">
-			<h3>Registering</h3>
-		</div>
-		<div className = "panel-body">
+		<div className = "formData">
 		<div className = "alert alert-info"><center>Please fill in all the blanks</center></div>
-		<form className = "form-inline" encType = "multipart-form/data">
+		<form className = "form-inline profile_form" encType = "multipart-form/data">
 				<div className = "col-sm-6">
 						<div className="inner-addon right-addon">
 						<i className = "glyphicon "></i>
-							ID/Passport Number: <br /><input type = "number" name = "id_passport" className = "form-control" placeholder = "ID/Passport Number" onBlur={this._validate}/>
+							ID/Passport Number: <br /><input type = "number" name = "id_passport" className = "mdl-textfield__input" placeholder = "ID/Passport Number" onBlur={this._validate}/>
 						</div>
 						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-						Email: <br /><input type = "email" name = "email" className = "form-control" placeholder = "Email" onBlur={this._validate}/><br />
+						Email: <br /><input type = "email" name = "email" className = "mdl-textfield__input" placeholder = "Email" onBlur={this._validate}/><br />
 						</div>
 						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-						Phone number: <br /><input type = "number" name = "phone1" className = "form-control" placeholder = "Phone number 1" onBlur={this._validate}/><br />
+						Phone number: <br /><input type = "number" name = "phone1" className = "mdl-textfield__input" placeholder = "Phone number 1" onBlur={this._validate}/><br />
 						</div>
 						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-						Phone number: <br /><input type = "number" name = "phone2" className = "form-control" placeholder = "Phone number 2" onBlur={this._validate}/><br />
+						Phone number: <br /><input type = "number" name = "phone2" className = "mdl-textfield__input" placeholder = "Phone number 2" onBlur={this._validate}/><br />
 						</div>
 						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-						Address: <br /><input type = "text" name = "address" className = "form-control" placeholder = "Address" onBlur={this._validate}/><br />
+						Address: <br /><input type = "text" name = "address" className = "mdl-textfield__input" placeholder = "Address" onBlur={this._validate}/><br />
 						</div>
 						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
 						Highest Education Level: <br />
@@ -160,18 +156,17 @@ var Settings = React.createClass({
 							</select>
 						</div>
 						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-						Estate Locality: <br /><input type = "text" name = "estate_locality" className = "form-control" placeholder = "Estate Locality" onBlur={this._validate}/><br />
+						Estate Locality: <br /><input type = "text" name = "estate_locality" className = "mdl-textfield__input" placeholder = "Estate Locality" onBlur={this._validate}/><br />
 						</div>
 						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-						Certificate: <br /><input type = "text" name = "certificate" className = "form-control" placeholder = "Certificate" onBlur={this._validate}/><br />
+						Certificate: <br /><input type = "text" name = "certificate" className = "mdl-textfield__input" placeholder = "Certificate" onBlur={this._validate}/><br />
 						</div>
 						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-						Institution Name: <br /><input type = "text" name = "school" className = "form-control" placeholder = "Institution Name" onBlur={this._validate}/><br /><br /><br />
+						Institution Name: <br /><input type = "text" name = "school" className = "mdl-textfield__input" placeholder = "Institution Name" onBlur={this._validate}/><br /><br /><br />
 						</div>
 						</div>
 						<button type="button" className="btn btn-success" onClick={this._handleClick}>Submit</button>
 				</form>
-				</div>
 			</div>
 
 		);

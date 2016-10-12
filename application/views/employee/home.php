@@ -4,6 +4,7 @@
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/template.css">
+<<<<<<< HEAD
   <link rel="stylesheet" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/intlTelInput.css">
 	<!-- <link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/bower_components/bootstrap/dist/css/jumbotron.css"> -->
   <!--<script type="text/javascript">
@@ -13,6 +14,8 @@
   });
   </script>-->
  
+=======
+>>>>>>> 1cf5f05c2f0eb1260c699a0cb49edde718012431
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -114,6 +117,7 @@
         
     </div>
      
+<<<<<<< HEAD
  <!--Creating the modal for registration-->
  <!--<div class="modal" id = "register">
  	<div class="modal-dialog">
@@ -147,14 +151,13 @@
   $("#phone").intlTelInput();
 </script>
 <!--<script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+=======
 
-<script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/babel-core.js"></script>
-<script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react.min.js"></script>
-<script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-dom.min.js"></script>
-<script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-with-addons.min.js"></script>
-<script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type = "text/babel" src = "<?php print base_url();?>assets/js/registration.js"></script>
-<script type="text/javascript" src = "<?php print base_url();?>assets/js/login.js"></script>-->
+</div>
+
+</body>
+>>>>>>> 1cf5f05c2f0eb1260c699a0cb49edde718012431
+
 </html>
 
      

@@ -133,7 +133,7 @@ var TableCell = React.createClass({
 						<td>{this.props.start_date}</td>
 						<td>DEFAULT</td>
 						<td><span className = "chat glyphicon glyphicon-envelope"></span></td>
-						<td>Recommend</td>
+						<td>*</td>
 						<td><button className = "btn btn-default"><span className = "glyphicon glyphicon-trash"></span></button></td>
 					</tr>
 		);
@@ -157,8 +157,8 @@ var TableCreator = React.createClass({
 		<TableCell id = { x.id } title = {x.title} description = {x.description} start_date = {x.start_date} 
 		budget = {x.budget} location = {x.location}/>);
 		return(
-			<table className = "table table-striped table-bordered table-hover">
-				<thead>
+			<table className = "mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+				<thead className = "mdl-data-table__cell--non-numeric">
 					<tr>
 						<td>Job ID</td>
 						<td>Title</td>
@@ -168,7 +168,7 @@ var TableCreator = React.createClass({
 						<td>Start Date</td>
 						<td>Bid</td>
 						<td>Chat</td>
-						<td>Recommend</td>
+						<td>Rec.</td>
 						<td>Discard</td>
 					</tr>
 				</thead>
@@ -205,15 +205,6 @@ var OrderPage = React.createClass({
 	}
 });
 
-//This is the area where we listen if the client has clicked on the orders__available tab so as to load the requisite page
+ReactDOM.render(<OrderPage />, document.getElementById('customer_form'));
 
-
-var orders = $('a#orders-tab');
-
-orders.on('click', function( event )
-{
-	event.preventDefault();
-	event.stopPropagation();
-	ReactDOM.render(<OrderPage />, document.getElementById('customer_form'));
-});
 
