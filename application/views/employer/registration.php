@@ -586,7 +586,7 @@
     {
       event.preventDefault();
       event.stopPropagation();
-      window.location.href = "/janta/index.php/Employee_registration/step_four";
+      window.location.href = "/janta/index.php/Employee_registration/personal_details";
     });
 
 

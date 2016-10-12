@@ -190,6 +190,7 @@ background: #fff;
     margin: 40px auto;
     margin-bottom: 0;
     box-sizing: border-box;
+    padding-bottom: 0;
 }
 
 .board > div.board-inner{

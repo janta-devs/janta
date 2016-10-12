@@ -39,6 +39,7 @@ class Home extends CI_Controller{
 				$clean = $this->security->xss_clean($this->input->post(NULL, TRUE));
 				unset($clean['re_password']);
 				$id = $this->login->insertUser($clean);
+				$this->session->set_userdata('id', $id);
 				$token = $this->login->insertToken($id);
 
 				$qstring = $this->base64url_encode($token);
@@ -102,6 +103,8 @@ class Home extends CI_Controller{
 			foreach($userInfo as $key=>$val){
 				$this->session->set_userdata($key, $val);
 			}
+
+			print_r( $this->session->userdata() );
 			redirect(site_url(). '/home/');
 		}
 	}
