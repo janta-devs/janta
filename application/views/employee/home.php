@@ -14,8 +14,6 @@
   });
   </script>-->
  
-=======
->>>>>>> 1cf5f05c2f0eb1260c699a0cb49edde718012431
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -96,6 +94,14 @@
       <?php echo form_error('email_add');?>
     </div>
     <div class="form-group">
+      <?php echo form_password(array('name'=>'password', 'id'=> 'password', 'placeholder'=>'Your Password', 'class'=>'form-control', 'value' => set_value('password'))); ?>
+      <?php echo form_error('password');?>
+    </div>
+    <div class="form-group">
+      <?php echo form_password(array('name'=>'re_password', 'id'=> 're_password', 'placeholder'=>'Reenter Password', 'class'=>'form-control', 'value' => set_value('password'))); ?>
+      <?php echo form_error('re_password');?>
+    </div>
+    <div class="form-group">
       <?php echo form_input(array('name'=>'phone', 'id'=> 'phone', 'placeholder'=>'Mobile Phone', 'class'=>'form-control', 'value' => set_value('phone'))); ?>
       <?php echo form_error('phone');?>
     </div>
@@ -117,32 +123,9 @@
         
     </div>
      
-<<<<<<< HEAD
+
  <!--Creating the modal for registration-->
- <!--<div class="modal" id = "register">
- 	<div class="modal-dialog">
- 		<div class="modal-content">
- 			<div class="modal-header">
-      <h4>Register</h4>
-      </div>
 
- 			<div class="modal-body">
-     <!--<div class="alert alert-success" style="display: none;">Please fill all the fields</div>
- 				<form class="form-inline" id="registration">
- 					Username<br /><input type="text" name="username" placeholder="Username"  class="form-control"/><br />
- 					Password<br /><input type="password" name="password" placeholder="Password"  class="form-control"/><br />
- 					Re-enter password<br /><input type="password" name="re_password" placeholder="Reenter Password"  class="form-control"/><br />
-          Email:<br /><input type="email" name="email" placeholder="Email"  class="form-control"/><br/> 
- 			</div>
- 			<div class="modal-footer">
- 				<button class="btn btn-primary pull-right" id="register">Submit</button>
-        <button class="btn btn-warning pull-left" data-dismiss = "modal">Close</button>
- 				</form>
- 			</div>-->
-
- 	<!--</div>
- 	</div>
- </div>-->
  <!--End of Modal-->
 </body>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/jquery/dist/jquery-3.1.1.min.js"></script>
@@ -150,13 +133,7 @@
 <script>
   $("#phone").intlTelInput();
 </script>
-<!--<script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/jquery/dist/jquery.min.js"></script>
-=======
 
-</div>
-
-</body>
->>>>>>> 1cf5f05c2f0eb1260c699a0cb49edde718012431
 
 </html>
 

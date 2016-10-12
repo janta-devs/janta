@@ -99,7 +99,7 @@ and open the template in the editor.
     border:1px solid #2ca71c;
     font-weight:bold;
 }
-=======
+
 .chat{
     cursor: pointer;
 }
@@ -153,37 +153,37 @@ and open the template in the editor.
 .alert{
     
 }
-<<<<<<< HEAD
+
 /*for the registration page tabs*/
 .wizard {
     margin: 20px auto;
     background: #fff;
 }
 
-    .wizard .nav-tabs {
-        position: relative;
-        margin: 40px auto;
-        margin-bottom: 0;
-        border-bottom-color: #e0e0e0;
-    }
+.wizard .nav-tabs {
+    position: relative;
+    margin: 40px auto;
+    margin-bottom: 0;
+    border-bottom-color: #e0e0e0;
+}
 
-    .wizard > div.wizard-inner {
-        position: relative;
-    }
+.wizard > div.wizard-inner {
+    position: relative;
+}
 
 .connecting-line {
     height: 2px;
     background: #e0e0e0;
-=======
-@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
-/* written by riliwan balogun http://www.facebook.com/riliwan.rabo*/
-.board
-{
+    @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
+    /* written by riliwan balogun http://www.facebook.com/riliwan.rabo*/
+}
+.board{
 width: 75%;
 margin: 60px auto;
 background: #fff;
 }
 .board .nav-tabs {
+    padding-top: 5%;
     position: relative;
     /* border-bottom: 0; */
     /* width: 80%; */
@@ -205,7 +205,6 @@ p.narrow{
 .liner{
     height: 2px;
     background: #ddd;
->>>>>>> 1cf5f05c2f0eb1260c699a0cb49edde718012431
     position: absolute;
     width: 80%;
     margin: 0 auto;
@@ -215,43 +214,30 @@ p.narrow{
     z-index: 1;
 }
 
-<<<<<<< HEAD
 .wizard .nav-tabs > li.active > a, .wizard .nav-tabs > li.active > a:hover, .wizard .nav-tabs > li.active > a:focus {
     color: #555555;
     cursor: default;
-=======
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    color: #555555;
-    cursor: default;
     /* background-color: #ffffff; */
->>>>>>> 1cf5f05c2f0eb1260c699a0cb49edde718012431
     border: 0;
     border-bottom-color: transparent;
 }
 
-<<<<<<< HEAD
-span.round-tab {
-=======
-span.round-tabs{
->>>>>>> 1cf5f05c2f0eb1260c699a0cb49edde718012431
+span.round-tabs {
+
     width: 70px;
     height: 70px;
     line-height: 70px;
     display: inline-block;
     border-radius: 100px;
-<<<<<<< HEAD
     background: #fff;
     border: 2px solid #e0e0e0;
-=======
     background: white;
->>>>>>> 1cf5f05c2f0eb1260c699a0cb49edde718012431
     z-index: 2;
     position: absolute;
     left: 0;
     text-align: center;
     font-size: 25px;
 }
-<<<<<<< HEAD
 span.round-tab i{
     color:#555555;
 }
@@ -343,8 +329,6 @@ span.round-tab:hover {
         left: 35%;
     }
 }
->>>>>>> 8b424a56a90c60c6fa6abe8398da9e51f27ef332
-=======
 
 span.round-tabs.one{
     color: rgb(34, 194, 34);border: 2px solid rgb(34, 194, 34);
@@ -520,5 +504,3 @@ left: 35%;
   left: 0px;
   position: relative;
 }
-
->>>>>>> 1cf5f05c2f0eb1260c699a0cb49edde718012431

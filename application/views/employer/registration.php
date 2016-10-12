@@ -579,7 +579,20 @@
           console.log(data);
         });
     });
+
+
+    var job_seeker = $('#choice_employee');
+    job_seeker.on('click', function( event )
+    {
+      event.preventDefault();
+      event.stopPropagation();
+      window.location.href = "/janta/index.php/Employee_registration/step_four";
+    });
+
+
   });
+
+
     
   </script>
 </body>

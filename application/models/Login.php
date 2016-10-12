@@ -18,6 +18,7 @@
                 'industry'=>$d['industry'],
                 'specialization'=>$d['specialization'],
                 'email'=>$d['email_add'],
+                'password'=>$d['password'],
                 'role'=>$this->roles[0], 
                 'status'=>$this->status[0]
             );
