@@ -115,19 +115,19 @@ var Settings = React.createClass({
 				<div className = "col-sm-6">
 						<div className="inner-addon right-addon">
 						<i className = "glyphicon "></i>
-							ID/Passport Number: <br /><input type = "number" name = "id_passport" className = "form-control" placeholder = "ID/Passport Number" onBlur={this._validate}/>
+							ID/Passport Number: <br /><input type = "number" name = "id_passport" className = "mdl-textfield__input" placeholder = "ID/Passport Number" onBlur={this._validate}/>
 						</div>
 						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-						Email: <br /><input type = "email" name = "email" className = "form-control" placeholder = "Email" onBlur={this._validate}/><br />
+						Email: <br /><input type = "email" name = "email" className = "mdl-textfield__input" placeholder = "Email" onBlur={this._validate}/><br />
 						</div>
 						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-						Phone number: <br /><input type = "number" name = "phone1" className = "form-control" placeholder = "Phone number 1" onBlur={this._validate}/><br />
+						Phone number: <br /><input type = "number" name = "phone1" className = "mdl-textfield__input" placeholder = "Phone number 1" onBlur={this._validate}/><br />
 						</div>
 						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-						Phone number: <br /><input type = "number" name = "phone2" className = "form-control" placeholder = "Phone number 2" onBlur={this._validate}/><br />
+						Phone number: <br /><input type = "number" name = "phone2" className = "mdl-textfield__input" placeholder = "Phone number 2" onBlur={this._validate}/><br />
 						</div>
 						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-						Address: <br /><input type = "text" name = "address" className = "form-control" placeholder = "Address" onBlur={this._validate}/><br />
+						Address: <br /><input type = "text" name = "address" className = "mdl-textfield__input" placeholder = "Address" onBlur={this._validate}/><br />
 						</div>
 						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
 						Highest Education Level: <br />
@@ -156,13 +156,13 @@ var Settings = React.createClass({
 							</select>
 						</div>
 						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-						Estate Locality: <br /><input type = "text" name = "estate_locality" className = "form-control" placeholder = "Estate Locality" onBlur={this._validate}/><br />
+						Estate Locality: <br /><input type = "text" name = "estate_locality" className = "mdl-textfield__input" placeholder = "Estate Locality" onBlur={this._validate}/><br />
 						</div>
 						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-						Certificate: <br /><input type = "text" name = "certificate" className = "form-control" placeholder = "Certificate" onBlur={this._validate}/><br />
+						Certificate: <br /><input type = "text" name = "certificate" className = "mdl-textfield__input" placeholder = "Certificate" onBlur={this._validate}/><br />
 						</div>
 						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
-						Institution Name: <br /><input type = "text" name = "school" className = "form-control" placeholder = "Institution Name" onBlur={this._validate}/><br /><br /><br />
+						Institution Name: <br /><input type = "text" name = "school" className = "mdl-textfield__input" placeholder = "Institution Name" onBlur={this._validate}/><br /><br /><br />
 						</div>
 						</div>
 						<button type="button" className="btn btn-success" onClick={this._handleClick}>Submit</button>

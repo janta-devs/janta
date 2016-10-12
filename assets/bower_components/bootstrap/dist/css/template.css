@@ -23,7 +23,7 @@ and open the template in the editor.
 .jumbotron-text{
     font-family: sans-serif;
 }
-<<<<<<< HEAD
+
 .error_message
 {
     text-align:center;
@@ -159,9 +159,7 @@ and open the template in the editor.
 {
 width: 75%;
 margin: 60px auto;
-/*height: 500px;*/
 background: #fff;
-/*box-shadow: 10px 10px #ccc,-10px 20px #ddd;*/
 }
 .board .nav-tabs {
     position: relative;
@@ -384,3 +382,10 @@ left: 35%;
 #home{
   padding-bottom: 40rem;
 }
+
+.mdl-data-table{
+  margin-left: 0px;
+  left: 0px;
+  position: relative;
+}
+
