@@ -43,13 +43,13 @@
         <div class="container cols-lg-12">
             <div class="row">
                 <div class="board">
-                    <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
+
                     <div class="board-inner">
                     <ul class="nav nav-tabs" id="myTab">
                     <div class="liner"></div>
 
                      <li class="active">
-                         <a href="#home" data-toggle="tab" title="welcome">
+                         <a href="#home" data-toggle="tab" arial-controls="step1" title="welcome">
                           <span class="round-tabs one">
                                   <i class="glyphicon glyphicon-home"></i>
                           </span> 
@@ -57,7 +57,7 @@
                     </li>
 
                     <li>
-                      <a href="#profile" data-toggle="tab" title="profile">
+                      <a href="#profile" data-toggle="tab" arial-controls="step2" title="profile">
                          <span class="round-tabs two">
                              <i class="glyphicon glyphicon-user"></i>
                          </span> 
@@ -65,7 +65,7 @@
                    </li>
 
                    <li>
-                      <a href="#messages" data-toggle="tab" title="bootsnipp goodies">
+                      <a href="#messages" data-toggle="tab" arial-controls="step3" title="bootsnipp goodies">
                          <span class="round-tabs three">
                               <i class="glyphicon glyphicon-gift"></i>
                          </span>
@@ -73,7 +73,7 @@
                     </li>
 
                      <li>
-                       <a href="#settings" data-toggle="tab" title="blah blah">
+                       <a href="#settings" data-toggle="tab" arial-controls="step4" title="blah blah">
                            <span class="round-tabs four">
                                 <i class="glyphicon glyphicon-comment"></i>
                            </span> 

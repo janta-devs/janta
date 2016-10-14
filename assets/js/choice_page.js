@@ -26,17 +26,19 @@ var ProfilePic = React.createClass({
 			type: 'POST',
 			dataType: 'json'
 		})
-		.done(function( res ) {
+		.done(function( res ){
 			var new_path;
-			new_path = (res.placeholder == null || res.placeholder == undefined) ? self.state.placeholder : 
-			/janta/+res.placeholder.replace(/http:\/\/localhost\/janta\/index.php\/Employee_registration\/janta\//gi, "");
+			new_path = ( res.placeholder === null || res.placeholder === undefined || res.placeholder === "" ) ? self.state.placeholder : 
+			res.placeholder.replace(/http:\/\/localhost\/janta\/index.php\/Employee_registration\/janta\//gi, "");
 			(new_path === self.state.placeholder) ? "" : self.setState({placeholder: new_path});
 			global_data['path'] = new_path;
-		});
-		
+		})
+		.fail(function( res ){
+			global_data['path'] = self.state.placeholder;
+		});	
 	},
 	componentWillUpdate: function( nextProp, nextState ){
-		nextState;
+		global_data['path'] = nextState.placeholder;
 	},
 	_upload: function( event ){
 		event.preventDefault();
@@ -155,10 +157,9 @@ var Individual = React.createClass({
 		})
 		.done(function( response ) {
 			if( response['status'] == 'registered'){
-				status.show().removeClass('warning').addClass('success').html("User is Registered");
-				ReactDOM.render(<Settings />, document.getElementById('choice'));
+				
 			}else if( response['exists'] == true ){
-				status.show().removeClass('success').addClass('warning').html("User is already Registered!!");
+				
 			}
 		})
 		.fail(function( response ) {

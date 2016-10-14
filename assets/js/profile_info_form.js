@@ -5,6 +5,7 @@ var information = $('.alert');
 var Settings = React.createClass({
 	getInitialState: function(){
 		return {
+			session_data: {},
 			user_info: {},
 			employee_type: 'individual'
 		}
@@ -33,25 +34,23 @@ var Settings = React.createClass({
 			&& this.state.user_info.hasOwnProperty('estate_locality')
 			&& this.state.user_info.hasOwnProperty('school'))
 			{
-					this._submit( formData );
+				this._submit( formData );
 			}
 			else
 			{
 				var node = $(ReactDOM.findDOMNode(this));
 				var info_div = node.find('div.alert');
-				info_div.removeClass('alert-info').addClass('alert-danger').html('<center>Fill in all the required fields</center>').toggle(700);
-			}
-	
+				info_div.removeClass('alert-info').addClass('alert-danger').html('<center>Fill in all the required fields</center>').slideDown(1500).slideUp(1500);
+				
+				console.log(  $(ReactDOM.findDOMNode(this)).parent().find('#profile') );
+			}	
 	},
 	_validate: function( event )
 	{
 		event.preventDefault();
 		event.stopPropagation();
-
 		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
 		var node = event.target, $node = $( node ), $type = $node.attr('type');
-		
 		if($type == 'text' && typeof($node.val()) == 'string' && $node.val() !== "")
 		{
 			$node.parent().children('i').removeClass('glyphicon-warning-sign');
@@ -61,7 +60,7 @@ var Settings = React.createClass({
 		else if( $type == 'email' && typeof($node.val()) == 'string' && re.test($node.val()) && $node.val() !== "")
 		{
 			$node.parent().children('i').removeClass('glyphicon-warning-sign');
-			form_data[$node.attr('name')] = $node.val();
+			form_data[$node.attr('name')] = $.trim($node.val());
 			this.setState({user_info: form_data});
 		}
 		else if( $type == 'number' && isNaN( $node.val() ) == false && $node.val() !== "")
@@ -106,6 +105,16 @@ var Settings = React.createClass({
 		.fail(function( response ) {
 			console.log( response );
 		})	
+	},
+	componentWillMount: function(){
+		$.ajax({
+			url: '/janta/index.php/Employee_registration/profile',
+			type: 'POST',
+			dataType: 'json',
+		})
+		.done(function( res ) {
+			console.log(res);
+		});
 	},
 	render: function() {
 		return (
@@ -165,7 +174,7 @@ var Settings = React.createClass({
 						Institution Name: <br /><input type = "text" name = "school" className = "mdl-textfield__input" placeholder = "Institution Name" onBlur={this._validate}/><br /><br /><br />
 						</div>
 						</div>
-						<button type="button" className="btn btn-success" onClick={this._handleClick}>Submit</button>
+						<button type="button" className="btn btn-success next-tab" onClick={this._handleClick}>Submit</button>
 				</form>
 			</div>
 

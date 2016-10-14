@@ -7,7 +7,8 @@ class Employee_registration extends CI_Controller{
 	public function employeeData()
 	{
 		$data = $this->input->post();
-		$data['login_id'] = 8;
+		$session_data = $this->session->userdata();
+		$data['login_id'] = $session_data['login_id'];
 		$this->load->model('Employee');
 		$Employee = new Employee();
 		$Employee->insert( $data );
@@ -16,8 +17,9 @@ class Employee_registration extends CI_Controller{
 	{
 		$this->load->model('Employee');
 		$employee = new Employee();
-		$data['user_info'] = $employee->pull_multiple_tables( 8 ); 
-		$this->load->view('employee/profile.php', $data);
+		$session_data = $this->session->userdata();
+		$data['user_info'] = $employee->pull_multiple_tables( $session_data['login_id'] ); 
+		// $this->load->view('employee/profile.php', $data);
 	}
 }
 

@@ -77,13 +77,15 @@ class Home extends CI_Controller{
 			'login_id'=>$user_info->login_id,
 			'token'=>$this->base64url_encode($token)
 			);
+
+		$this->session->set_userdata( $data );
 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[5]');
 		$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required|matches[password');
 
 		if($this->form_validation->run() == FALSE){
 			$this->load->view('employer/registration', $data);
 		} else {
-			$this->load->library('passwprd');
+			$this->load->library('password');
 			$post = $this->input->post(NULL, TRUE);
 
 			$cleanPost = $this->security->xss_clean($post);
