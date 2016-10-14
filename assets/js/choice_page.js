@@ -1,5 +1,9 @@
 var global_data = {};
 var status = $('div#status');
+
+var tabs  = $(document).find('body').find('div.container-fluid').children('section')
+.find('div.container').find('div.row').children('div.board').find('ul#myTab').find('li.active');
+
 var ProfilePic = React.createClass({
 	getInitialState: function(){
 		return{placeholder: '/janta/assets/pics/anony.jpg'}
@@ -145,8 +149,9 @@ var Individual = React.createClass({
 		var $node = $( event.target );
 		var formData = $node.parent().parent().serialize();
 		formData = formData+"&employee_type="+this.props.employee_type+"&profile_photo="+global_data.path;
-		console.log( formData );
-		this._submit( formData );
+		// this._submit( formData );
+
+		tabs.next().find('a[data-toggle="tab"]').click();
 	},
 	_submit: function( data ){
 		$.ajax({
@@ -158,6 +163,10 @@ var Individual = React.createClass({
 		.done(function( response ) {
 			if( response['status'] == 'registered'){
 				
+				//making the tab to change automatically to the next
+
+
+
 			}else if( response['exists'] == true ){
 				
 			}

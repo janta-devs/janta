@@ -46,36 +46,36 @@
 
                     <div class="board-inner">
                     <ul class="nav nav-tabs" id="myTab">
-                    <div class="liner"></div>
+                    
 
                      <li class="active">
-                         <a href="#home" data-toggle="tab" arial-controls="step1" title="welcome">
+                         <a href="#home" data-toggle="tab" arial-controls="step1" title="User Profile">
                           <span class="round-tabs one">
-                                  <i class="glyphicon glyphicon-home"></i>
+                                  <i class="glyphicon glyphicon-user"></i>
                           </span> 
                         </a>
                     </li>
 
                     <li>
-                      <a href="#profile" data-toggle="tab" arial-controls="step2" title="profile">
+                      <a href="#profile" data-toggle="tab" arial-controls="step2" title="Personal Information">
                          <span class="round-tabs two">
-                             <i class="glyphicon glyphicon-user"></i>
+                             <i class="glyphicon glyphicon-home"></i>
                          </span> 
                       </a>
                    </li>
 
-                   <li>
-                      <a href="#messages" data-toggle="tab" arial-controls="step3" title="bootsnipp goodies">
+                   <li class = "messages">
+                      <a href="#messages" data-toggle="tab" arial-controls="step3" title="Settings">
                          <span class="round-tabs three">
-                              <i class="glyphicon glyphicon-gift"></i>
+                              <i class="glyphicon glyphicon-asterisk"></i>
                          </span>
                       </a>
                     </li>
 
                      <li>
-                       <a href="#settings" data-toggle="tab" arial-controls="step4" title="blah blah">
+                       <a href="#settings" data-toggle="tab" arial-controls="step4" title="Documents upload">
                            <span class="round-tabs four">
-                                <i class="glyphicon glyphicon-comment"></i>
+                                <i class="glyphicon glyphicon-book"></i>
                            </span> 
                        </a>
                      </li>
@@ -103,7 +103,7 @@
                         </div>
 
                         <div class="tab-pane fade" id="messages">
-                            <div id="customer_form"></div>
+                            <div id="preferences"></div>
                         </div>
 
                         <div class="tab-pane fade" id="settings">
@@ -145,7 +145,7 @@
 <script type="text/javascript" src = "<?php print base_url();?>assets/node_modules/material-design-lite/material.js"></script>
 <script type = "text/babel" src = "<?php print base_url();?>assets/js/profile_info_form.js"></script>
 <script type = "text/babel" src = "<?php print base_url();?>assets/js/choice_page.js"></script>
-<script type = "text/babel" src = "<?php print base_url();?>assets/js/orders.js"></script>
+<script type = "text/babel" src = "<?php print base_url();?>assets/js/preferences.js"></script>
 <script type="text/javascript">
 $(function()
 {

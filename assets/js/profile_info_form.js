@@ -1,6 +1,9 @@
 var form_data = {};
 var information = $('.alert');
 
+var tabs  = $(document).find('body').find('div.container-fluid').children('section')
+.find('div.container').find('div.row').children('div.board').find('ul#myTab').find('li');
+
 
 var Settings = React.createClass({
 	getInitialState: function(){
@@ -22,7 +25,6 @@ var Settings = React.createClass({
 		var $node = $( event.target );
 		var formData = $node.parent().serialize();
 		formData = formData+"&employee_type="+this.state.employee_type;
-		
 		if( this.state.user_info.hasOwnProperty('id_passport')		// this checks whether the form was well filled 
 			&& this.state.user_info.hasOwnProperty('email')
 			&& this.state.user_info.hasOwnProperty('phone1')
@@ -97,7 +99,7 @@ var Settings = React.createClass({
 		.done(function( response ) {
 			if( response['status'] == 'registered'){	
 				status.show('slideDown').removeClass('warning').addClass('success').html("User is Registered");
-				ReactDOM.render(<Settings />, document.getElementById('choice'));
+				tabs.next('.messages').find('a[data-toggle="tab"]').click();
 			}else if( response['exists'] == true ){
 				status.show('slideDown').removeClass('success').addClass('warning').html("User is already Registered!!");
 			}
