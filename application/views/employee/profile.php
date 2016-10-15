@@ -2,8 +2,6 @@
 <html>
 <?php 
 $obj = $user_info->row();
-
-print_r( $obj );
 ?>
 <head>
 	<title>Register</title>
@@ -146,7 +144,7 @@ print_r( $obj );
             
             <li class="dropdown">
               <a marked="1" tabindex="-1" href="#" class="dropdown-toggle avatar_width" data-toggle="dropdown" role="button" aria-expanded="false"><span class="avatar-holder">
-              <img src="<?php print base_url().$obj->profile_photo; ?>" alt=""></span>
+              <img src="<?php print base_url().preg_replace("/janta/", '', $obj->profile_photo); ?>" alt=""></span>
               <span class="avatar_info hidden-sm"><?php print $obj->first_name.' '.$obj->last_name; ?></span></a>
               <ul style="visibility: visible; animation-duration: 1500ms; animation-name: fadeInUp;" class="dropdown-menu user-dropdown animated fadeInUp wow avatar_drop neat_drop animated" data-wow-duration="1500ms" role="menu">
                                 
@@ -349,5 +347,5 @@ print_r( $obj );
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-dom.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/react/react-with-addons.min.js"></script>
 <script type="text/javascript" src = "<?php print base_url();?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type = "text/babel" src = "<?php print base_url();?>assets/js/orders.js"></script>
+<!-- <script type = "text/babel" src = "<?php print base_url();?>assets/js/orders.js"></script> -->
 </html>

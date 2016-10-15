@@ -1,14 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Home extends CI_Controller{
+class Home extends CI_Controller
+{
 	public $status;
 	public $roles;
-	function __construct(){
-		parent::__construct();
-		$this->load->model('Login', 'login', TRUE);
-		$this->form_validation->set_error_delimiters('<div class="error">', '<div>');
-		$this->status = $this->config->item('status');
-		$this->roles  = $this->config->item('role');
+	function __construct()
+	{
+			parent::__construct();
+			$this->load->model('Login', 'login', TRUE);
+			$this->form_validation->set_error_delimiters('<div class="error">', '<div>');
+			$this->status = $this->config->item('status');
+			$this->roles  = $this->config->item('role');
 	}
 	public function index()
 	{

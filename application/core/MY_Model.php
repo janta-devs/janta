@@ -20,7 +20,7 @@ class MY_Model extends CI_Model
 	}
 	public function update($login_id, $new_data)
 	{
-		$this->db->where('login_id', $initial_data['login_id']);
+		$this->db->where('login_id', $login_id);
 		return ( ($this->db->update($this::DB_TABLE, $new_data) === True ) ) ? 
 		print json_encode(['status'=>'true']): print json_encode(['status'=>'false']);
 		
@@ -80,9 +80,9 @@ class MY_Model extends CI_Model
 	}
 	public function check( $table, $data )
 	{
-		$this->db->get_where( $table, $data, 1);
+		$this->db->get_where( $table, $data);
 		$num_of_affected_rows = $this->db->affected_rows();
-		return ($num_of_affected_rows === 1) ? TRUE : FALSE;
+		return ($num_of_affected_rows == 1) ? TRUE : FALSE;
 	}
 
 	public function pull_multiple_tables( $id )
@@ -93,6 +93,6 @@ class MY_Model extends CI_Model
 		$this->db->where('user_login.login_id = '.$id);
 		return $result = $this->db->get();
 	}
-}
+} 
 
 ?>

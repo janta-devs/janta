@@ -96,8 +96,9 @@ var Settings = React.createClass({
 			dataType: 'json',
 			data: data,
 		})
-		.done(function( response ) {
-			if( response['status'] == 'registered'){	
+		.done(function( response ) 
+		{
+			if( response['status'] == 'registered' || response['status'] == 'true'){	
 				status.show('slideDown').removeClass('warning').addClass('success').html("User is Registered");
 				tabs.next('.messages').find('a[data-toggle="tab"]').click();
 			}else if( response['exists'] == true ){
@@ -155,6 +156,18 @@ var Settings = React.createClass({
 				</div>
 				<div className = "col-sm-6">
 						<div className="inner-addon right-addon"><i className = "glyphicon "></i>
+						Country: <br />
+							<select className = "form-control" name = "country" type = "select" onChange ={this._validate}>
+								<option>--SELECT--</option>
+								<option>Kenya</option>
+								<option>Uganda</option>
+								<option>Rwanda</option>
+								<option>Burundi</option>
+								<option>Tanzania</option>
+								<option>Sudan</option>
+							</select>
+						</div>
+									<div className="inner-addon right-addon"><i className = "glyphicon "></i>
 						City/Town: <br />
 							<select className = "form-control" name = "city_town" type = "select" onChange ={this._validate}>
 								<option>--SELECT--</option>
