@@ -18,10 +18,11 @@ class MY_Model extends CI_Model
 			print json_encode(['exists'=>TRUE]);
 		}
 	}
-	public function update($initial_data, $new_data)
+	public function update($login_id, $new_data)
 	{
 		$this->db->where('login_id', $initial_data['login_id']);
-		return ( ($this->db->update($this::DB_TABLE, $new_data) === True ) ) ? true: false;
+		return ( ($this->db->update($this::DB_TABLE, $new_data) === True ) ) ? 
+		print json_encode(['status'=>'true']): print json_encode(['status'=>'false']);
 		
 	}
 	public function populate( $row ){
@@ -79,7 +80,7 @@ class MY_Model extends CI_Model
 	}
 	public function check( $table, $data )
 	{
-		$this->db->get_where( $this::DB_TABLE , $data, 1);
+		$this->db->get_where( $table, $data, 1);
 		$num_of_affected_rows = $this->db->affected_rows();
 		return ($num_of_affected_rows === 1) ? TRUE : FALSE;
 	}

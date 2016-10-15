@@ -24,8 +24,6 @@ class Home extends CI_Controller{
 	{
 		/*Validating requested input for registration step 1*/
 		$this->form_validation->set_rules('email_add', 'Email Address', 'required|valid_email');
-		$this->form_validation->set_rules('password', 'Password', 'required');
-		$this->form_validation->set_rules('re_password', 're_password', 'required');
 		$this->form_validation->set_rules('industry', 'Industry', 'required');
 		$this->form_validation->set_rules('specialization', 'Specialization', 'required');
 		$this->form_validation->set_rules('phone', 'phone', 'required');
@@ -37,7 +35,6 @@ class Home extends CI_Controller{
 				redirect(site_url().'/home/login');
 			}else{
 				$clean = $this->security->xss_clean($this->input->post(NULL, TRUE));
-				unset($clean['re_password']);
 				$id = $this->login->insertUser($clean);
 				$this->session->set_userdata('id', $id);
 				$token = $this->login->insertToken($id);

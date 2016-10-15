@@ -94,14 +94,6 @@
       <?php echo form_error('email_add');?>
     </div>
     <div class="form-group">
-      <?php echo form_password(array('name'=>'password', 'id'=> 'password', 'placeholder'=>'Your Password', 'class'=>'form-control', 'value' => set_value('password'))); ?>
-      <?php echo form_error('password');?>
-    </div>
-    <div class="form-group">
-      <?php echo form_password(array('name'=>'re_password', 'id'=> 're_password', 'placeholder'=>'Reenter Password', 'class'=>'form-control', 'value' => set_value('password'))); ?>
-      <?php echo form_error('re_password');?>
-    </div>
-    <div class="form-group">
       <?php echo form_input(array('name'=>'phone', 'id'=> 'phone', 'placeholder'=>'Mobile Phone', 'class'=>'form-control', 'value' => set_value('phone'))); ?>
       <?php echo form_error('phone');?>
     </div>

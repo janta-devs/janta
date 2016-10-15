@@ -86,7 +86,6 @@ var Corporate = React.createClass({
 		var $node = $( event.target );
 		var formData = $node.parent().serialize();
 		formData = formData+"&employee_type="+this.props.employee_type;
-		console.log( formData );
 		this._submit( formData );
 	},
 	_submit: function( data )
@@ -97,10 +96,13 @@ var Corporate = React.createClass({
 			dataType: 'json',
 			data: data,
 		})
-		.done(function( response ) {
+		.done(function( response ) 
+		{
 			if( response['status'] == 'registered'){	
 				status.show('slideDown').removeClass('warning').addClass('success').html("User is Registered");
-				location.href = "/janta/index.php/Employee_registration/profile";
+
+				tabs.next().find('a[data-toggle="tab"]').click();
+				
 			}else if( response['exists'] == true ){
 				status.show('slideDown').removeClass('success').addClass('warning').html("User is already Registered!!");
 			}
@@ -111,7 +113,6 @@ var Corporate = React.createClass({
 	},
 	render: function()
 	{
-		console.log( this.props );
 		return (
 		<fieldset>
 		<div className = "panel-body">
@@ -149,9 +150,7 @@ var Individual = React.createClass({
 		var $node = $( event.target );
 		var formData = $node.parent().parent().serialize();
 		formData = formData+"&employee_type="+this.props.employee_type+"&profile_photo="+global_data.path;
-		// this._submit( formData );
-
-		tabs.next().find('a[data-toggle="tab"]').click();
+		this._submit( formData );
 	},
 	_submit: function( data ){
 		$.ajax({
@@ -161,14 +160,12 @@ var Individual = React.createClass({
 			data: data,
 		})
 		.done(function( response ) {
-			if( response['status'] == 'registered'){
-				
-				//making the tab to change automatically to the next
+			if( response['status'] == 'registered' || response['status'] == 'true'){
 
+				tabs.next().find('a[data-toggle="tab"]').click();
 
-
-			}else if( response['exists'] == true ){
-				
+			}else if( response['exists'] == true || response['status'] == false){
+				console.log( response );
 			}
 		})
 		.fail(function( response ) {
@@ -186,6 +183,8 @@ var Individual = React.createClass({
 								First Name: <br /><input type = "text" name = "first_name" className = "mdl-textfield__input" placeholder = "First Name"/><br />
 								Last Name: <br /><input type = "text" name = "last_name" className = "mdl-textfield__input" placeholder = "Last Name"/><br />
 								Surname Name: <br /><input type = "text" name = "surname" className = "mdl-textfield__input" placeholder = "Surname"/><br />
+								Password:<br /><input type = "password" name = "password" className = "mdl-textfield__input" placeholder = "Password"/><br />
+								Password:<br /><input type = "password" name = "re_password" className = "mdl-textfield__input" placeholder = "Re enter Password"/><br />
 								Gender: <br />
 									<select className = "form-control" name = "gender">
 										<option>Male</option>
