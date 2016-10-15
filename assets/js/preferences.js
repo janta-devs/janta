@@ -2,6 +2,9 @@
 document.body.scrollTop = document.documentElement.scrollTop = 0;
 $(window).scrollTop(0);
 
+var tabs  = $(document).find('body').find('div.container-fluid').children('section')
+.find('div.container').find('div.row').children('div.board').find('ul#myTab').find('li');
+
 var PreferenceForm = React.createClass({
 render: function() {
 	return (
@@ -159,9 +162,10 @@ var Preference = React.createClass({
 		event.preventDefault();
 		event.stopPropagation();
 
-
 		var node = event.target, $node = $( node );
 		console.log( $node.parent().parent().serialize() );
+
+		tabs.next('.documents').find('a[data-toggle="tab"]').click();
 	},
 	render: function() {
 		return (

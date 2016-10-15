@@ -9,6 +9,24 @@
    <link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/node_modules/bootstrap-material-design/dist/css/ripples.css">
    <!--Material design-->
    <link rel="stylesheet" type="text/css" href="<?php print base_url();?>assets/node_modules/material-design-lite/material.css">
+
+<style type="text/css">
+.demo-card-wide.mdl-card {
+  width: 512px;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('/janta/assets/pics/welcome.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+  
+}
+.mdl-card__supporting-text{
+  font-weight: 20px;
+}
+</style>
 </head>
 <body>
 <!--nav bar -->
@@ -71,7 +89,7 @@
                       </a>
                     </li>
 
-                     <li>
+                     <li class='documents'>
                        <a href="#settings" data-toggle="tab" arial-controls="step4" title="Documents upload">
                            <span class="round-tabs four">
                                 <i class="glyphicon glyphicon-book"></i>
@@ -79,7 +97,7 @@
                        </a>
                      </li>
 
-                     <li>
+                     <li class = "doner">
                         <a href="#doner" data-toggle="tab" title="completed">
                            <span class="round-tabs five">
                                 <i class="glyphicon glyphicon-ok"></i>
@@ -106,12 +124,39 @@
                         </div>
 
                         <div class="tab-pane fade" id="settings">
-                        
+                              <div id="component" style ="height: 500px;"></div>
                         </div>
 
 
                         <div class="tab-pane fade" id="doner">
-
+                            <div id="doner" style ="height: 500px;">
+                              <?php
+                                $sess = $this->session->userdata();
+                                $data = $sess['userInfo'];
+                              ?>
+                              <!--Start of MDL card-->
+                              <center>
+                                <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                                      <div class="mdl-card__title">
+                                        <h2 class="mdl-card__title-text">Welcome, <?php print $data->first_name?></h2>
+                                      </div>
+                                      <div class="mdl-card__supporting-text">
+                                        Registration successful, please get started.
+                                      </div>
+                                      <div class="mdl-card__actions mdl-card--border">
+                                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect start">
+                                          Get Started
+                                        </a>
+                                      </div>
+                                      <div class="mdl-card__menu">
+                                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                          <i class="material-icons">share</i>
+                                        </button>
+                                      </div>
+                                    </div>
+                              </center>
+                          <!--End of MDL card-->
+                            </div>
                         </div>
 
                   <div class="clearfix"></div>
@@ -123,12 +168,6 @@
 </section>
 
 <!-- End of rounded Tabs-->
-
-
-  
-
-
-
  
 </div>
 <!-- end of container -->
@@ -145,10 +184,20 @@
 <script type = "text/babel" src = "<?php print base_url();?>assets/js/profile_info_form.js"></script>
 <script type = "text/babel" src = "<?php print base_url();?>assets/js/choice_page.js"></script>
 <script type = "text/babel" src = "<?php print base_url();?>assets/js/preferences.js"></script>
+<script type = "text/babel" src = "<?php print base_url();?>assets/js/drag_drop.js"></script>
+
 <script type="text/javascript">
 $(function()
 {
   $('a[title]').tooltip();
 });
+
+$('a.start').on('click', function( event ){
+  event.preventDefault();
+  event.stopPropagation();
+  location.href = "/janta/index.php/Employee_registration/profile";
+});
+
+
 </script>
 </html>

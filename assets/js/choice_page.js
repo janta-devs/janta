@@ -102,9 +102,7 @@ var Corporate = React.createClass({
 		{
 			if( response['status'] == 'registered'){	
 				status.show('slideDown').removeClass('warning').addClass('success').html("User is Registered");
-
 				tabs.next().find('a[data-toggle="tab"]').click();
-
 			}else if( response['exists'] == true ){
 				status.show('slideDown').removeClass('success').addClass('warning').html("User is already Registered!!");
 			}

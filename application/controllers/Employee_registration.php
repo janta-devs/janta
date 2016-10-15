@@ -30,6 +30,10 @@ class Employee_registration extends CI_Controller{
 			($Employee->update( $session_data['login_id'], $data ) == true ) ? 
 			print json_encode(['status'=>'true']) : print json_encode(['status'=>'false']);
 			$User_login->update($session_data['login_id'], ['password'=>$data['password']] );
+
+
+			$updated_userdata = $Employee->pull_multiple_tables( $session_data['login_id'] )->row(); 
+			$this->session->set_userdata( ['userInfo' => $updated_userdata] );
 		}
 		else
 		{
@@ -45,6 +49,11 @@ class Employee_registration extends CI_Controller{
 		$session_data = $this->session->userdata();
 		$data['user_info'] = $employee->pull_multiple_tables( $session_data['login_id'] ); 
 		$this->load->view('employee/profile.php', $data);
+	}
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect(site_url().'/home/login/');
 	}
 }
 
