@@ -21,8 +21,7 @@ class MY_Model extends CI_Model
 	public function update($login_id, $new_data)
 	{
 		$this->db->where('login_id', $login_id);
-		return ( ($this->db->update($this::DB_TABLE, $new_data) === True ) ) ? 
-		print json_encode(['status'=>'true']): print json_encode(['status'=>'false']);
+		return ( ($this->db->update($this::DB_TABLE, $new_data) === True ) ) ? true : false;
 		
 	}
 	public function populate( $row ){

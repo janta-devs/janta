@@ -1,6 +1,8 @@
 var form_data = {};
 var information = $('.alert');
 
+$('html, body').scrollTop(0);
+
 var tabs  = $(document).find('body').find('div.container-fluid').children('section')
 .find('div.container').find('div.row').children('div.board').find('ul#myTab').find('li');
 
@@ -98,8 +100,8 @@ var Settings = React.createClass({
 		})
 		.done(function( response ) 
 		{
-			if( response['status'] == 'registered' || response['status'] == 'true'){	
-				status.show('slideDown').removeClass('warning').addClass('success').html("User is Registered");
+			if( response['status'] == 'registered' || response['status'] == 'true')
+			{
 				tabs.next('.messages').find('a[data-toggle="tab"]').click();
 			}else if( response['exists'] == true ){
 				status.show('slideDown').removeClass('success').addClass('warning').html("User is already Registered!!");

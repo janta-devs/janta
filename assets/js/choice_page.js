@@ -1,6 +1,8 @@
 var global_data = {};
 var status = $('div#status');
 
+$('html, body').scrollTop(0);
+
 var tabs  = $(document).find('body').find('div.container-fluid').children('section')
 .find('div.container').find('div.row').children('div.board').find('ul#myTab').find('li.active');
 
@@ -102,7 +104,7 @@ var Corporate = React.createClass({
 				status.show('slideDown').removeClass('warning').addClass('success').html("User is Registered");
 
 				tabs.next().find('a[data-toggle="tab"]').click();
-				
+
 			}else if( response['exists'] == true ){
 				status.show('slideDown').removeClass('success').addClass('warning').html("User is already Registered!!");
 			}

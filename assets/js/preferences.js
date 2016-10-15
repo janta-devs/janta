@@ -1,3 +1,7 @@
+
+document.body.scrollTop = document.documentElement.scrollTop = 0;
+$(window).scrollTop(0);
+
 var PreferenceForm = React.createClass({
 render: function() {
 	return (

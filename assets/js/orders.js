@@ -1,3 +1,4 @@
+$('html, body').scrollTop(0);
 var dummiedata = [
 {
 	id: 1,
